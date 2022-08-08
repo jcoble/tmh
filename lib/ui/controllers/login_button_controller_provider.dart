@@ -10,49 +10,49 @@ import 'package:tmh/utils/extension_methods/extension_methods.dart';
 import '../../utils/in_memory_store.dart';
 import '../repository/repository.dart';
 
-class LoginButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // note: this is a *custom* button class that takes an extra `isLoading` argument
-    return PrimaryButton(
-      text: 'Pay',
-      // this will show a spinner if loading is true
-      isLoading: ,
-      onPressed: () {
-        // use a service locator or provider to get the checkout service
-        // make the payment
-      }, child: ,
-    );
-  }
-}
+// class LoginButton extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     // note: this is a *custom* button class that takes an extra `isLoading` argument
+//     return PrimaryButton(
+//       text: 'Pay',
+//       // this will show a spinner if loading is true
+//       isLoading: false,
+//       onPressed: () {
+//         // use a service locator or provider to get the checkout service
+//         // make the payment
+//       }, child: ,
+//     );
+//   }
+// }
 
-class LoginButton extends ConsumerWidget {
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    // error handling
-    ref.listen<AsyncValue<void>>(
-      loginButtonControllerProvider,
-          (_, state) => state.showSnackBarOnError(context),
-    );
-    final loginState = ref.watch(loginButtonControllerProvider);
-    // note: this is a *custom* button class that takes an extra `isLoading` argument
-    return PrimaryButton(
-      text: 'Pay',
-      // show a spinner if loading is true
-      isLoading: loginState?.isLoading,
-      // disable button if loading is true
-      onPressed: loginState.isLoading
-          ? null
-          : () => ref.read(loginButtonControllerProvider.notifier).update((state) => isLoading = false;),
-    );
-  }
-}
+// class LoginButton extends ConsumerWidget {
+//   @override
+//   Widget build(BuildContext context, WidgetRef ref) {
+//     // error handling
+//     ref.listen<AsyncValue<void>>(
+//       loginButtonControllerProvider,
+//           (_, state) => state.showSnackBarOnError(context),
+//     );
+//     final loginState = ref.watch(loginButtonControllerProvider);
+//     // note: this is a *custom* button class that takes an extra `isLoading` argument
+//     return LoginButton(
+//       text: 'Login',
+//       // show a spinner if loading is true
+//       isLoading: loginState?.isLoading,
+//       // disable button if loading is true
+//       onPressed: loginState?.isLoading
+//           ? null
+//           : () => ref.read(loginButtonControllerProvider.notifier).update((state) => isLoading = false;),
+//     );
+//   }
+// }
 
 class PrimaryButton extends ElevatedButton {
-   PrimaryButton({required super.onPressed, required super.child});
+   PrimaryButton({Key? key, required super.onPressed, required super.child, required String text, required bool isLoading}) : super(key: key);
 
    @override
-  // TODO: implement onPressed
+    // TODO: implement onPressed
     onPressed: super.onPressed,
 
 }
@@ -61,12 +61,24 @@ abstract class ILoginButtonController {
   Future<void> login({required Authenticate authenticate});
 
   Future<void> register({required Register register});
-};
-class loginButtonController extends StateNotifierProvider<AsyncValue<void>>{
-  LoginButtonController({required this.authStateService}): super(const AsyncValue.data(null))
+}
 
-  final AuthStateService authStateService;
-  LoginButtonController controller;
+
+class loginButtonController extends StateNotifier<AsyncValue<void>>{
+  loginButtonController({required this.authStateService}): super(const AsyncValue.data(null));
+
+  @override
+  final loginButtonController _loginButtonController;
+  loginButtonController controller;
+
+  static void add(AuthenticationStatus unauthenticated) {
+    InMemoryStore.add(unauthenticated);
+
+
+  }
+
+
+
 };
 
 
@@ -83,7 +95,21 @@ final loginButtonControllerProvider = StateProvider<AuthenticateResponse?>((ref)
 
 enum AuthenticationStatus { unknown, authenticated, unauthenticated }
 
-final authStateNotifierProvider = StateNotifierProvider<AuthStateNotifier, AsyncValue<void>>((ref) => AuthStateNotifier(ref));
+consumerWidget<T>(
+  T Function(BuildContext context, WidgetRef ref) builder, {
+  Key? key,
+  bool Function(T previous, T next)? equality,
+  bool Function(T value)? shouldRebuild,
+}) {
+  return ConsumerWidget<T>(
+    key: key,
+    builder: builder,
+    equality: equality,
+    shouldRebuild: shouldRebuild,
+  );
+}
+
+final authStateNotifierProvider = StateNotifierProvider<AuthenticationStatus>((ref) => AuthStateNotifier(ref));
 
 class AuthStateNotifier extends StateNotifier<AsyncValue<void>> {
   AuthStateNotifier(this.ref) : super(const AsyncData<void>(null));
@@ -143,6 +169,7 @@ class AuthStateNotifier extends StateNotifier<AsyncValue<void>> {
   Future<void> signOut() async {
     try {
       final client = ref.watch(repositoryClientProvider);
+      client.close();
       await client.post(Authenticate(provider: "logout"));
       loginButtonController.add(AuthenticationStatus.unauthenticated);
       state = const AsyncData(null);

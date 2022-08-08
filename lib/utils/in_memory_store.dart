@@ -1,4 +1,5 @@
 import 'package:rxdart/rxdart.dart';
+import 'package:tmh/ui/controllers/login_button_controller_provider.dart';
 
 /// An in-memory store backed by BehaviorSubject that can be used to
 /// store the data for all the fake repositories in the app.
@@ -19,4 +20,6 @@ class InMemoryStore<T> {
 
   /// Don't forget to call this when done
   void close() => _subject.close();
+
+  static void add(AuthenticationStatus unauthenticated) {}
 }

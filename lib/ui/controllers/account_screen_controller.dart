@@ -4,18 +4,20 @@ import '../repository/auth_repository.dart';
 
 class AccountScreenController
     extends StateNotifier<AuthenticationStatus, AsyncValue<void>> {
-  AccountScreenController() : super(const AsyncData(null));
+  AccountScreenController(this.authStateNotifier)
+      : super(const AsyncData(null));
 
+  final AuthStateNotifier authStateNotifier;
   Future<void> signOut() async {
     state = const AsyncValue.loading();
     state = await AsyncValue.guard(
-        authStateService.key.read(authStateService).signOut());
+        authStateNotifier.ref.read(authStateNotifierProvider).signOut());
   }
 }
 
 final accountScreenControllerProvider = StateNotifierProvider.autoDispose<
     AccountScreenController, AsyncValue<void>>((ref) {
   return AccountScreenController(
-    authRepository: ref.watch(authRepositoryProvider),
+    authRepository: ref.watch(authStateNotifierProvider),
   );
 });
