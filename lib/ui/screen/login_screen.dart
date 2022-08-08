@@ -1,3 +1,4 @@
+import 'package:tmh/ui/controllers/login_button_controller_provider.dart';
 import 'package:tmh/ui/repository/repository.dart';
 import 'package:tmh/utils/extension_methods/extension_methods.dart';
 import 'package:universal_io/io.dart';
@@ -18,7 +19,8 @@ class LoginScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final AsyncValue<void> state = ref.watch(signInScreenControllerProvider);
+    final AsyncValue<void> state = ref.watch(loginButtonControllerProvider);
+
     bool _obscureText = true;
     IconData _iconVisible = Icons.visibility_off;
 
@@ -35,9 +37,10 @@ class LoginScreen extends ConsumerWidget {
       }
     }
 
-    ref.listen<AsyncValue>(
-      signInScreenControllerProvider,
-      (_, state) => state.showSnackbarOnError(context),
+    // 1. listen for errors
+    ref.listen<AsyncValue<void>>(
+      onAuthStateChanged,
+      (_, state) => state.showSnackBarOnError(context),
     );
 
     // @override
@@ -130,20 +133,15 @@ class LoginScreen extends ConsumerWidget {
                     borderRadius: BorderRadius.circular(3.0),
                   )),
                 ),
-                onPressed: () {
-                  Fluttertoast.showToast(
-                      msg: 'Click login', toastLength: Toast.LENGTH_SHORT);
+                onPressed: state.isLoading
+                    ? null
+                    : () => ref.read(authStateProvider).login(
+                          authenticate: Authenticate(
+                              provider: "credentials",
+                              userName: emailController.text,
+                              password: passwordController.text),
+                        ),
 
-                  state.isLoading
-                      ? null
-                      : () => ref
-                          .read(signInScreenControllerProvider.notifier)
-                          .signIn(
-                              authenticate: Authenticate(
-                                  provider: "Credentials",
-                                  userName: emailController.text,
-                                  password: passwordController.text));
-                },
                 // child: const Padding(
                 //   padding: EdgeInsets.symmetric(vertical: 12),
                 //   child: Text(

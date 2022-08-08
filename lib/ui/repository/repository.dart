@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:servicestack/servicestack.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:servicestack/web_client.dart'
@@ -5,7 +6,10 @@ import 'package:servicestack/web_client.dart'
 
 class Repository {}
 
-var client = ClientFactory.create('https://localhost:5001');
+var client = ClientFactory.create('https://dev.servicestack.com:5001/api');
 final repositoryClientProvider = Provider<IServiceClient>((ref) {
-  return client;
+  return kDebugMode
+      ? ClientFactory.createWith(ClientOptions(
+          baseUrl: 'https://dev.servicestack.com:5001/api', ignoreCert: true))
+      : ClientFactory.create('https://prod.app');
 });
