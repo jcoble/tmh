@@ -49,13 +49,18 @@ import '../repository/repository.dart';
 // }
 
 class PrimaryButton extends ElevatedButton {
-   PrimaryButton({Key? key, required super.onPressed, required super.child, required String text, required bool isLoading}) : super(key: key);
+  PrimaryButton(
+      {Key? key, required super.onPressed, required super.child, required String text, required bool isLoading})
+      : super(key: key);
 
-   @override
-    // TODO: implement onPressed
-    onPressed: super.onPressed,
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
 
+
+  }
 }
+
+
 
 abstract class ILoginButtonController {
   Future<void> login({required Authenticate authenticate});
@@ -83,8 +88,8 @@ class loginButtonController extends StateNotifier<AsyncValue<void>>{
 
 
 
-final loginButtonControllerProvider = StateProvider<AuthenticateResponse?>((ref) {
-  return AuthenticateResponse();
+final loginButtonControllerProvider =  StateProvider<AuthenticateResponse?>((ref) {
+
 });
 
 // class loginNotifier extends StateNotifier<loginButtonController, > {
@@ -135,8 +140,8 @@ class AuthStateNotifier extends StateNotifier<AsyncValue<void>> {
       // TODO: implement login
       state = const AsyncLoading<void>();
       final client = ref.watch(repositoryClientProvider);
-      var authenticateResponse = await client.post(authenticate);
-      state = const AsyncValue.data(null);
+      var authenticateResponse = await client.post<AuthenticateResponse?>(authenticate);
+      state = AsyncValue.data(authenticateResponse);
       loginButtonController.add(AuthenticationStatus.authenticated);
     } catch (e) {
       print(e);

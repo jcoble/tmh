@@ -19,11 +19,9 @@ class LoginButton extends ConsumerWidget {
 
     final loginState = ref.watch(onAuthStateChanged);
     // final isLoading = loginState is AsyncLoading<void>;
-    return PrimaryButton(
+    return LoginButton(
         text: "Login",
         isLoading: loginState.isLoading,
-        onPressed: loginState.isLoading
-            ? null
-            : () => ref.read(loginButtonControllerProvider.notifier));
+        onPressed: loginState.isLoading ? null : () => ref.read(loginButtonControllerProvider.notifier));
   }
 }

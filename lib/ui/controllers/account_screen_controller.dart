@@ -1,10 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tmh/ui/controllers/login_button_controller_provider.dart';
-import '../repository/auth_repository.dart';
 
 class AccountScreenController
     extends StateNotifier<AuthenticationStatus, AsyncValue<void>> {
-  AccountScreenController(this.authStateNotifier)
+  AccountScreenController(this.authStateNotifier, {required authRepository})
       : super(const AsyncData(null));
 
   final AuthStateNotifier authStateNotifier;
@@ -14,6 +13,13 @@ class AccountScreenController
         authStateNotifier.ref.read(authStateNotifierProvider).signOut());
   }
 }
+
+// final accountScreenControllerProvider = StateNotifierProvider.autoDispose<
+//     AccountScreenController, AsyncValue<void>>((ref) {
+//   return AccountScreenController(
+//     authRepository: ref.watch(authStateNotifierProvider),
+//   );
+// });
 
 final accountScreenControllerProvider = StateNotifierProvider.autoDispose<
     AccountScreenController, AsyncValue<void>>((ref) {
