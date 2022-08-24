@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tmh/ui/screen/AuthScreen.dart';
+import 'package:go_router/go_router.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -13,7 +14,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: const AuthScreen(),
     );
   }
 }

@@ -1,12 +1,12 @@
 /* Options:
-Date: 2022-08-17 03:19:30
+Date: 2022-08-24 04:43:14
 Version: 6.2
 Tip: To override a DTO option, remove "//" prefix before updating
 BaseUrl: https://localhost:5001
 
 //GlobalNamespace: 
-AddServiceStackTypes: True
-AddResponseStatus: True
+//AddServiceStackTypes: True
+//AddResponseStatus: False
 //AddImplicitVersion: 
 //AddDescriptionAsComments: True
 //IncludeTypes: 
@@ -41,7 +41,6 @@ class Appointments implements IConvertible {
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -59,7 +58,6 @@ class Appointments implements IConvertible {
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -74,7 +72,6 @@ class Appointments implements IConvertible {
       };
 
   getTypeName() => "Appointments";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -169,7 +166,6 @@ class AppUser implements IConvertible {
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     profileUrl = json['profileUrl'];
     lastLoginIp = json['lastLoginIp'];
@@ -222,7 +218,6 @@ class AppUser implements IConvertible {
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'profileUrl': profileUrl,
         'lastLoginIp': lastLoginIp,
@@ -272,7 +267,6 @@ class AppUser implements IConvertible {
       };
 
   getTypeName() => "AppUser";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -343,7 +337,6 @@ class CrudEvent implements IConvertible {
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     eventType = json['eventType'];
@@ -364,7 +357,6 @@ class CrudEvent implements IConvertible {
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'eventType': eventType,
@@ -384,7 +376,6 @@ class CrudEvent implements IConvertible {
       };
 
   getTypeName() => "CrudEvent";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -417,7 +408,6 @@ class MeasurementDetails implements IConvertible {
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -436,7 +426,6 @@ class MeasurementDetails implements IConvertible {
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -452,7 +441,6 @@ class MeasurementDetails implements IConvertible {
       };
 
   getTypeName() => "MeasurementDetails";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -480,7 +468,6 @@ class Measurements implements IConvertible {
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -496,7 +483,6 @@ class Measurements implements IConvertible {
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -509,7 +495,6 @@ class Measurements implements IConvertible {
       };
 
   getTypeName() => "Measurements";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -534,7 +519,6 @@ class MeasurementTypes implements IConvertible {
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -549,7 +533,6 @@ class MeasurementTypes implements IConvertible {
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -561,7 +544,6 @@ class MeasurementTypes implements IConvertible {
       };
 
   getTypeName() => "MeasurementTypes";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -602,7 +584,6 @@ class Schedules implements IConvertible {
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -629,7 +610,6 @@ class Schedules implements IConvertible {
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -651,7 +631,6 @@ class Schedules implements IConvertible {
       };
 
   getTypeName() => "Schedules";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -667,7 +646,6 @@ class TreatmentReminderSounds implements IConvertible {
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -677,7 +655,6 @@ class TreatmentReminderSounds implements IConvertible {
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -686,7 +663,6 @@ class TreatmentReminderSounds implements IConvertible {
       };
 
   getTypeName() => "TreatmentReminderSounds";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -729,7 +705,6 @@ class Treatments implements IConvertible {
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -752,7 +727,6 @@ class Treatments implements IConvertible {
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -772,7 +746,6 @@ class Treatments implements IConvertible {
       };
 
   getTypeName() => "Treatments";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -833,7 +806,6 @@ class TreatmentScheduledEvents implements IConvertible {
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -868,7 +840,6 @@ class TreatmentScheduledEvents implements IConvertible {
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -900,7 +871,6 @@ class TreatmentScheduledEvents implements IConvertible {
       };
 
   getTypeName() => "TreatmentScheduledEvents";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -987,7 +957,6 @@ class UserAuthDetails implements IConvertible {
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     userAuthId = json['userAuthId'];
@@ -1034,7 +1003,6 @@ class UserAuthDetails implements IConvertible {
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'userAuthId': userAuthId,
@@ -1079,7 +1047,6 @@ class UserAuthDetails implements IConvertible {
       };
 
   getTypeName() => "UserAuthDetails";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -1108,7 +1075,6 @@ class UserAuthRole implements IConvertible {
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     userAuthId = json['userAuthId'];
@@ -1124,7 +1090,6 @@ class UserAuthRole implements IConvertible {
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'userAuthId': userAuthId,
@@ -1139,7 +1104,6 @@ class UserAuthRole implements IConvertible {
       };
 
   getTypeName() => "UserAuthRole";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -1155,7 +1119,6 @@ class ServerStats implements IConvertible {
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     redis =
         JsonConverters.fromJson(json['redis'], 'Map<String,int?>', context!);
@@ -1166,7 +1129,6 @@ class ServerStats implements IConvertible {
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'redis': JsonConverters.toJson(redis, 'Map<String,int?>', context!),
         'serverEvents': serverEvents,
@@ -1176,7 +1138,6 @@ class ServerStats implements IConvertible {
       };
 
   getTypeName() => "ServerStats";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -1189,7 +1150,6 @@ class AdminDashboardResponse implements IConvertible {
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     serverStats =
         JsonConverters.fromJson(json['serverStats'], 'ServerStats', context!);
@@ -1198,7 +1158,6 @@ class AdminDashboardResponse implements IConvertible {
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'serverStats':
             JsonConverters.toJson(serverStats, 'ServerStats', context!),
@@ -1207,26 +1166,20 @@ class AdminDashboardResponse implements IConvertible {
       };
 
   getTypeName() => "AdminDashboardResponse";
-  @override
   TypeContext? context = _ctx;
 }
 
 class AdminDashboard implements IReturn<AdminDashboardResponse>, IConvertible {
   AdminDashboard();
   AdminDashboard.fromJson(Map<String, dynamic> json) : super();
-  @override
   fromMap(Map<String, dynamic> json) {
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {};
-  @override
   createResponse() => AdminDashboardResponse();
   getResponseTypeName() => "AdminDashboardResponse";
-  @override
   getTypeName() => "AdminDashboard";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -1241,22 +1194,17 @@ class QueryAppointments extends QueryDb<Appointments>
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     super.fromMap(json);
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => super.toJson()..addAll({'id': id});
 
-  @override
   createResponse() => QueryResponse<Appointments>();
   getResponseTypeName() => "QueryResponse<Appointments>";
-  @override
   getTypeName() => "QueryAppointments";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -1271,22 +1219,17 @@ class QueryAppUsers extends QueryDb<AppUser>
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     super.fromMap(json);
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => super.toJson()..addAll({'id': id});
 
-  @override
   createResponse() => QueryResponse<AppUser>();
   getResponseTypeName() => "QueryResponse<AppUser>";
-  @override
   getTypeName() => "QueryAppUsers";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -1301,22 +1244,17 @@ class QueryCrudEvents extends QueryDb<CrudEvent>
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     super.fromMap(json);
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => super.toJson()..addAll({'id': id});
 
-  @override
   createResponse() => QueryResponse<CrudEvent>();
   getResponseTypeName() => "QueryResponse<CrudEvent>";
-  @override
   getTypeName() => "QueryCrudEvents";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -1331,22 +1269,17 @@ class QueryMeasurementDetails extends QueryDb<MeasurementDetails>
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     super.fromMap(json);
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => super.toJson()..addAll({'id': id});
 
-  @override
   createResponse() => QueryResponse<MeasurementDetails>();
   getResponseTypeName() => "QueryResponse<MeasurementDetails>";
-  @override
   getTypeName() => "QueryMeasurementDetails";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -1361,22 +1294,17 @@ class QueryMeasurements extends QueryDb<Measurements>
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     super.fromMap(json);
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => super.toJson()..addAll({'id': id});
 
-  @override
   createResponse() => QueryResponse<Measurements>();
   getResponseTypeName() => "QueryResponse<Measurements>";
-  @override
   getTypeName() => "QueryMeasurements";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -1391,22 +1319,17 @@ class QueryMeasurementTypes extends QueryDb<MeasurementTypes>
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     super.fromMap(json);
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => super.toJson()..addAll({'id': id});
 
-  @override
   createResponse() => QueryResponse<MeasurementTypes>();
   getResponseTypeName() => "QueryResponse<MeasurementTypes>";
-  @override
   getTypeName() => "QueryMeasurementTypes";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -1421,22 +1344,17 @@ class QuerySchedules extends QueryDb<Schedules>
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     super.fromMap(json);
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => super.toJson()..addAll({'id': id});
 
-  @override
   createResponse() => QueryResponse<Schedules>();
   getResponseTypeName() => "QueryResponse<Schedules>";
-  @override
   getTypeName() => "QuerySchedules";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -1454,22 +1372,17 @@ class QueryTreatmentReminderSounds extends QueryDb<TreatmentReminderSounds>
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     super.fromMap(json);
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => super.toJson()..addAll({'id': id});
 
-  @override
   createResponse() => QueryResponse<TreatmentReminderSounds>();
   getResponseTypeName() => "QueryResponse<TreatmentReminderSounds>";
-  @override
   getTypeName() => "QueryTreatmentReminderSounds";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -1484,22 +1397,17 @@ class QueryTreatments extends QueryDb<Treatments>
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     super.fromMap(json);
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => super.toJson()..addAll({'id': id});
 
-  @override
   createResponse() => QueryResponse<Treatments>();
   getResponseTypeName() => "QueryResponse<Treatments>";
-  @override
   getTypeName() => "QueryTreatments";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -1517,22 +1425,17 @@ class QueryTreatmentScheduledEvents extends QueryDb<TreatmentScheduledEvents>
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     super.fromMap(json);
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => super.toJson()..addAll({'id': id});
 
-  @override
   createResponse() => QueryResponse<TreatmentScheduledEvents>();
   getResponseTypeName() => "QueryResponse<TreatmentScheduledEvents>";
-  @override
   getTypeName() => "QueryTreatmentScheduledEvents";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -1547,22 +1450,17 @@ class QueryUserAuthDetails extends QueryDb<UserAuthDetails>
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     super.fromMap(json);
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => super.toJson()..addAll({'id': id});
 
-  @override
   createResponse() => QueryResponse<UserAuthDetails>();
   getResponseTypeName() => "QueryResponse<UserAuthDetails>";
-  @override
   getTypeName() => "QueryUserAuthDetails";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -1577,22 +1475,17 @@ class QueryUserAuthRoles extends QueryDb<UserAuthRole>
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     super.fromMap(json);
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => super.toJson()..addAll({'id': id});
 
-  @override
   createResponse() => QueryResponse<UserAuthRole>();
   getResponseTypeName() => "QueryResponse<UserAuthRole>";
-  @override
   getTypeName() => "QueryUserAuthRoles";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -1627,7 +1520,6 @@ class CreateAppointments
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -1645,7 +1537,6 @@ class CreateAppointments
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -1659,12 +1550,9 @@ class CreateAppointments
         'appUserAuthId': appUserAuthId
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "CreateAppointments";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -1759,7 +1647,6 @@ class CreateAppUser
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     profileUrl = json['profileUrl'];
     lastLoginIp = json['lastLoginIp'];
@@ -1811,7 +1698,6 @@ class CreateAppUser
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'profileUrl': profileUrl,
         'lastLoginIp': lastLoginIp,
@@ -1859,12 +1745,9 @@ class CreateAppUser
         'appUserAuthId': appUserAuthId
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "CreateAppUser";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -1905,7 +1788,6 @@ class CreateCrudEvent
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     eventType = json['eventType'];
     model = json['model'];
@@ -1925,7 +1807,6 @@ class CreateCrudEvent
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'eventType': eventType,
         'model': model,
@@ -1943,12 +1824,9 @@ class CreateCrudEvent
         'meta': meta
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "CreateCrudEvent";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -1987,7 +1865,6 @@ class CreateMeasurementDetails
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -2006,7 +1883,6 @@ class CreateMeasurementDetails
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -2021,12 +1897,9 @@ class CreateMeasurementDetails
         'name': name
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "CreateMeasurementDetails";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -2059,7 +1932,6 @@ class CreateMeasurements
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -2075,7 +1947,6 @@ class CreateMeasurements
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -2087,12 +1958,9 @@ class CreateMeasurements
         'treatmentType': treatmentType
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "CreateMeasurements";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -2123,7 +1991,6 @@ class CreateMeasurementTypes
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -2138,7 +2005,6 @@ class CreateMeasurementTypes
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -2149,12 +2015,9 @@ class CreateMeasurementTypes
         'treatmentTypeId': treatmentTypeId
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "CreateMeasurementTypes";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -2197,7 +2060,6 @@ class CreateSchedules
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -2224,7 +2086,6 @@ class CreateSchedules
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -2245,12 +2106,9 @@ class CreateSchedules
             JsonConverters.toJson(nextRunDateTime, 'DateTime', context!)
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "CreateSchedules";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -2272,7 +2130,6 @@ class CreateTreatmentReminderSounds
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -2282,7 +2139,6 @@ class CreateTreatmentReminderSounds
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -2290,12 +2146,9 @@ class CreateTreatmentReminderSounds
         'description': description
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "CreateTreatmentReminderSounds";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -2338,7 +2191,6 @@ class CreateTreatments
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -2361,7 +2213,6 @@ class CreateTreatments
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -2380,12 +2231,9 @@ class CreateTreatments
         'unitsPlanned': unitsPlanned
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "CreateTreatments";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -2450,7 +2298,6 @@ class CreateTreatmentScheduledEvents
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -2485,7 +2332,6 @@ class CreateTreatmentScheduledEvents
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -2516,12 +2362,9 @@ class CreateTreatmentScheduledEvents
         'customerNotes': customerNotes
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "CreateTreatmentScheduledEvents";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -2612,7 +2455,6 @@ class CreateUserAuthDetails
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     userAuthId = json['userAuthId'];
     provider = json['provider'];
@@ -2658,7 +2500,6 @@ class CreateUserAuthDetails
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'userAuthId': userAuthId,
         'provider': provider,
@@ -2701,12 +2542,9 @@ class CreateUserAuthDetails
         'meta': meta
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "CreateUserAuthDetails";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -2739,7 +2577,6 @@ class CreateUserAuthRole
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     userAuthId = json['userAuthId'];
     role = json['role'];
@@ -2754,7 +2591,6 @@ class CreateUserAuthRole
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'userAuthId': userAuthId,
         'role': role,
@@ -2767,12 +2603,9 @@ class CreateUserAuthRole
         'meta': meta
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "CreateUserAuthRole";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -2790,21 +2623,16 @@ class DeleteAppointments
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {'id': id};
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "DeleteAppointments";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -2818,21 +2646,16 @@ class DeleteAppUser
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {'id': id};
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "DeleteAppUser";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -2850,21 +2673,16 @@ class DeleteCrudEvent
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {'id': id};
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "DeleteCrudEvent";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -2882,21 +2700,16 @@ class DeleteMeasurementDetails
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {'id': id};
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "DeleteMeasurementDetails";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -2914,21 +2727,16 @@ class DeleteMeasurements
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {'id': id};
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "DeleteMeasurements";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -2946,21 +2754,16 @@ class DeleteMeasurementTypes
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {'id': id};
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "DeleteMeasurementTypes";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -2978,21 +2781,16 @@ class DeleteSchedules
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {'id': id};
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "DeleteSchedules";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -3010,21 +2808,16 @@ class DeleteTreatmentReminderSounds
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {'id': id};
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "DeleteTreatmentReminderSounds";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -3042,21 +2835,16 @@ class DeleteTreatments
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {'id': id};
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "DeleteTreatments";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -3074,21 +2862,16 @@ class DeleteTreatmentScheduledEvents
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {'id': id};
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "DeleteTreatmentScheduledEvents";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -3106,21 +2889,16 @@ class DeleteUserAuthDetails
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {'id': id};
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "DeleteUserAuthDetails";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -3138,21 +2916,16 @@ class DeleteUserAuthRole
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {'id': id};
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "DeleteUserAuthRole";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -3187,7 +2960,6 @@ class PatchAppointments
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -3205,7 +2977,6 @@ class PatchAppointments
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -3219,12 +2990,9 @@ class PatchAppointments
         'appUserAuthId': appUserAuthId
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "PatchAppointments";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -3321,7 +3089,6 @@ class PatchAppUser
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     profileUrl = json['profileUrl'];
     lastLoginIp = json['lastLoginIp'];
@@ -3374,7 +3141,6 @@ class PatchAppUser
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'profileUrl': profileUrl,
         'lastLoginIp': lastLoginIp,
@@ -3423,12 +3189,9 @@ class PatchAppUser
         'appUserAuthId': appUserAuthId
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "PatchAppUser";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -3471,7 +3234,6 @@ class PatchCrudEvent
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     eventType = json['eventType'];
@@ -3492,7 +3254,6 @@ class PatchCrudEvent
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'eventType': eventType,
@@ -3511,12 +3272,9 @@ class PatchCrudEvent
         'meta': meta
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "PatchCrudEvent";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -3555,7 +3313,6 @@ class PatchMeasurementDetails
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -3574,7 +3331,6 @@ class PatchMeasurementDetails
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -3589,12 +3345,9 @@ class PatchMeasurementDetails
         'name': name
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "PatchMeasurementDetails";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -3627,7 +3380,6 @@ class PatchMeasurements
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -3643,7 +3395,6 @@ class PatchMeasurements
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -3655,12 +3406,9 @@ class PatchMeasurements
         'treatmentType': treatmentType
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "PatchMeasurements";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -3691,7 +3439,6 @@ class PatchMeasurementTypes
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -3706,7 +3453,6 @@ class PatchMeasurementTypes
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -3717,12 +3463,9 @@ class PatchMeasurementTypes
         'treatmentTypeId': treatmentTypeId
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "PatchMeasurementTypes";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -3765,7 +3508,6 @@ class PatchSchedules
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -3792,7 +3534,6 @@ class PatchSchedules
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -3813,12 +3554,9 @@ class PatchSchedules
             JsonConverters.toJson(nextRunDateTime, 'DateTime', context!)
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "PatchSchedules";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -3840,7 +3578,6 @@ class PatchTreatmentReminderSounds
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -3850,7 +3587,6 @@ class PatchTreatmentReminderSounds
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -3858,12 +3594,9 @@ class PatchTreatmentReminderSounds
         'description': description
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "PatchTreatmentReminderSounds";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -3906,7 +3639,6 @@ class PatchTreatments
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -3929,7 +3661,6 @@ class PatchTreatments
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -3948,12 +3679,9 @@ class PatchTreatments
         'unitsPlanned': unitsPlanned
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "PatchTreatments";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -4018,7 +3746,6 @@ class PatchTreatmentScheduledEvents
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -4053,7 +3780,6 @@ class PatchTreatmentScheduledEvents
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -4084,12 +3810,9 @@ class PatchTreatmentScheduledEvents
         'customerNotes': customerNotes
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "PatchTreatmentScheduledEvents";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -4182,7 +3905,6 @@ class PatchUserAuthDetails
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     userAuthId = json['userAuthId'];
@@ -4229,7 +3951,6 @@ class PatchUserAuthDetails
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'userAuthId': userAuthId,
@@ -4273,12 +3994,9 @@ class PatchUserAuthDetails
         'meta': meta
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "PatchUserAuthDetails";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -4313,7 +4031,6 @@ class PatchUserAuthRole
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     userAuthId = json['userAuthId'];
@@ -4329,7 +4046,6 @@ class PatchUserAuthRole
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'userAuthId': userAuthId,
@@ -4343,12 +4059,9 @@ class PatchUserAuthRole
         'meta': meta
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "PatchUserAuthRole";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -4383,7 +4096,6 @@ class UpdateAppointments
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -4401,7 +4113,6 @@ class UpdateAppointments
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -4415,12 +4126,9 @@ class UpdateAppointments
         'appUserAuthId': appUserAuthId
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "UpdateAppointments";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -4517,7 +4225,6 @@ class UpdateAppUser
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     profileUrl = json['profileUrl'];
     lastLoginIp = json['lastLoginIp'];
@@ -4570,7 +4277,6 @@ class UpdateAppUser
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'profileUrl': profileUrl,
         'lastLoginIp': lastLoginIp,
@@ -4619,12 +4325,9 @@ class UpdateAppUser
         'appUserAuthId': appUserAuthId
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "UpdateAppUser";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -4667,7 +4370,6 @@ class UpdateCrudEvent
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     eventType = json['eventType'];
@@ -4688,7 +4390,6 @@ class UpdateCrudEvent
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'eventType': eventType,
@@ -4707,12 +4408,9 @@ class UpdateCrudEvent
         'meta': meta
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "UpdateCrudEvent";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -4751,7 +4449,6 @@ class UpdateMeasurementDetails
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -4770,7 +4467,6 @@ class UpdateMeasurementDetails
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -4785,12 +4481,9 @@ class UpdateMeasurementDetails
         'name': name
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "UpdateMeasurementDetails";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -4823,7 +4516,6 @@ class UpdateMeasurements
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -4839,7 +4531,6 @@ class UpdateMeasurements
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -4851,12 +4542,9 @@ class UpdateMeasurements
         'treatmentType': treatmentType
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "UpdateMeasurements";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -4887,7 +4575,6 @@ class UpdateMeasurementTypes
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -4902,7 +4589,6 @@ class UpdateMeasurementTypes
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -4913,12 +4599,9 @@ class UpdateMeasurementTypes
         'treatmentTypeId': treatmentTypeId
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "UpdateMeasurementTypes";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -4961,7 +4644,6 @@ class UpdateSchedules
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -4988,7 +4670,6 @@ class UpdateSchedules
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -5009,12 +4690,9 @@ class UpdateSchedules
             JsonConverters.toJson(nextRunDateTime, 'DateTime', context!)
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "UpdateSchedules";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -5036,7 +4714,6 @@ class UpdateTreatmentReminderSounds
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -5046,7 +4723,6 @@ class UpdateTreatmentReminderSounds
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -5054,12 +4730,9 @@ class UpdateTreatmentReminderSounds
         'description': description
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "UpdateTreatmentReminderSounds";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -5102,7 +4775,6 @@ class UpdateTreatments
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -5125,7 +4797,6 @@ class UpdateTreatments
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -5144,12 +4815,9 @@ class UpdateTreatments
         'unitsPlanned': unitsPlanned
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "UpdateTreatments";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -5214,7 +4882,6 @@ class UpdateTreatmentScheduledEvents
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     createdAt =
@@ -5249,7 +4916,6 @@ class UpdateTreatmentScheduledEvents
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
@@ -5280,12 +4946,9 @@ class UpdateTreatmentScheduledEvents
         'customerNotes': customerNotes
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "UpdateTreatmentScheduledEvents";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -5378,7 +5041,6 @@ class UpdateUserAuthDetails
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     userAuthId = json['userAuthId'];
@@ -5425,7 +5087,6 @@ class UpdateUserAuthDetails
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'userAuthId': userAuthId,
@@ -5469,12 +5130,9 @@ class UpdateUserAuthDetails
         'meta': meta
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "UpdateUserAuthDetails";
-  @override
   TypeContext? context = _ctx;
 }
 
@@ -5509,7 +5167,6 @@ class UpdateUserAuthRole
     fromMap(json);
   }
 
-  @override
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
     userAuthId = json['userAuthId'];
@@ -5525,7 +5182,6 @@ class UpdateUserAuthRole
     return this;
   }
 
-  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'userAuthId': userAuthId,
@@ -5539,12 +5195,9 @@ class UpdateUserAuthRole
         'meta': meta
       };
 
-  @override
   createResponse() => IdResponse();
   getResponseTypeName() => "IdResponse";
-  @override
   getTypeName() => "UpdateUserAuthRole";
-  @override
   TypeContext? context = _ctx;
 }
 
