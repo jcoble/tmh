@@ -1,4 +1,4 @@
-import 'package:tmhants/breakpoints.dart';
+import 'package:tmh/src/constants/breakpoints.dart';
 import 'package:flutter/material.dart';
 import 'package:tmh/src/common_widgets/responsive_center.dart';
 import 'package:tmh/src/constants/app_sizes.dart';

@@ -1,6 +1,6 @@
-import 'package:tmhres/authentication/data/fake_auth_repository.dart';
-import 'package:tmhres/authentication/presentation/sign_in/email_password_sign_in_state.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:tmh/src/features/authentication/data/fake_auth_repository.dart';
+import 'package:tmh/src/features/authentication/presentation/sign_in/email_password_sign_in_state.dart';
 
 class EmailPasswordSignInController
     extends StateNotifier<EmailPasswordSignInState> {
