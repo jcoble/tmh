@@ -1,12 +1,12 @@
 /* Options:
-Date: 2022-08-17 03:19:30
+Date: 2022-08-24 05:49:43
 Version: 6.2
 Tip: To override a DTO option, remove "//" prefix before updating
 BaseUrl: https://localhost:5001
 
-GlobalNamespace: dtos
+GlobalNamespace: 
 AddServiceStackTypes: True
-AddResponseStatus: True
+AddResponseStatus: False
 //AddImplicitVersion: 
 //AddDescriptionAsComments: True
 //IncludeTypes: 
@@ -14,11 +14,8 @@ AddResponseStatus: True
 //DefaultImports: package:servicestack/servicestack.dart
 */
 
-library dtos;
-
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:servicestack/servicestack.dart';
-part 'dtos.g.dart';
 
 @CopyWith()
 class Appointments implements IConvertible {
@@ -276,7 +273,7 @@ class AppUser implements IConvertible {
   TypeContext? context = _ctx;
 }
 
-// @DataContract
+// @DataContract@CopyWith()
 @CopyWith()
 class CrudEvent implements IConvertible {
   // @DataMember(Order=1)
@@ -451,6 +448,7 @@ class MeasurementDetails implements IConvertible {
   getTypeName() => "MeasurementDetails";
   TypeContext? context = _ctx;
 }
+
 @CopyWith()
 class Measurements implements IConvertible {
   String? id;
@@ -643,6 +641,7 @@ class Schedules implements IConvertible {
   getTypeName() => "Schedules";
   TypeContext? context = _ctx;
 }
+
 @CopyWith()
 class TreatmentReminderSounds implements IConvertible {
   String? id;
@@ -675,6 +674,8 @@ class TreatmentReminderSounds implements IConvertible {
   getTypeName() => "TreatmentReminderSounds";
   TypeContext? context = _ctx;
 }
+
+@CopyWith()
 class Treatments implements IConvertible {
   String? id;
   DateTime? createdAt;
@@ -1060,6 +1061,7 @@ class UserAuthDetails implements IConvertible {
   getTypeName() => "UserAuthDetails";
   TypeContext? context = _ctx;
 }
+
 @CopyWith()
 class UserAuthRole implements IConvertible {
   int? id;
@@ -1117,6 +1119,7 @@ class UserAuthRole implements IConvertible {
   getTypeName() => "UserAuthRole";
   TypeContext? context = _ctx;
 }
+
 @CopyWith()
 class ServerStats implements IConvertible {
   Map<String, int?>? redis;
@@ -1151,6 +1154,7 @@ class ServerStats implements IConvertible {
   getTypeName() => "ServerStats";
   TypeContext? context = _ctx;
 }
+
 @CopyWith()
 class AdminDashboardResponse implements IConvertible {
   ServerStats? serverStats;
@@ -1194,8 +1198,10 @@ class AdminDashboard implements IReturn<AdminDashboardResponse>, IConvertible {
   getTypeName() => "AdminDashboard";
   TypeContext? context = _ctx;
 }
+
 // @Route("/appointments", "GET")
-// @Route("/appointments/{Id}", "GET")
+//
+//class ute("/appointments/{Id}", "GET")
 @CopyWith()
 class QueryAppointments extends QueryDb<Appointments>
     implements IReturn<QueryResponse<Appointments>>, IGet, IConvertible {
@@ -2143,6 +2149,7 @@ class CreateSchedules
 }
 
 // @Route("/treatmentremindersounds", "POST")
+//
 @CopyWith()
 class CreateTreatmentReminderSounds
     implements
@@ -2183,7 +2190,7 @@ class CreateTreatmentReminderSounds
   TypeContext? context = _ctx;
 }
 
-// @Route("/treatments", "POST")
+// @Route("/treatments", "POST"
 @CopyWith()
 class CreateTreatments
     implements IReturn<IdResponse>, IPost, ICreateDb<Treatments>, IConvertible {
@@ -2644,7 +2651,7 @@ class CreateUserAuthRole
   TypeContext? context = _ctx;
 }
 
-// @Route("/appointments/{Id}", "DELETE")
+// @Route("/appointments/{Id}", "DELETE"
 @CopyWith()
 class DeleteAppointments
     implements
@@ -2696,7 +2703,7 @@ class DeleteAppUser
   TypeContext? context = _ctx;
 }
 
-// @Route("/crudevents/{Id}", "DELETE")
+// @Route("/crudevents/{Id}", "DELETE"
 @CopyWith()
 class DeleteCrudEvent
     implements
@@ -2781,7 +2788,6 @@ class DeleteMeasurements
 }
 
 // @Route("/measurementtypes/{Id}", "DELETE")
-
 @CopyWith()
 class DeleteMeasurementTypes
     implements
@@ -2838,7 +2844,7 @@ class DeleteSchedules
 }
 
 // @Route("/treatmentremindersounds/{Id}", "DELETE")
-@CopyWith()
+// @CopyWith()
 class DeleteTreatmentReminderSounds
     implements
         IReturn<IdResponse>,
@@ -3245,8 +3251,7 @@ class PatchAppUser
   TypeContext? context = _ctx;
 }
 
-// @Route("/crudevents/{Id}", "PATCH")
-@()
+// @Route("/crudevents/{Id}", "PATCH"
 @CopyWith()
 class PatchCrudEvent
     implements IReturn<IdResponse>, IPatch, IPatchDb<CrudEvent>, IConvertible {
@@ -3330,7 +3335,7 @@ class PatchCrudEvent
   TypeContext? context = _ctx;
 }
 
-// @Route("/measurementdetails/{Id}", "PATCH")
+// @Route("/measurementdetails/{Id}", "PATCH"
 @CopyWith()
 class PatchMeasurementDetails
     implements
@@ -3404,7 +3409,7 @@ class PatchMeasurementDetails
   TypeContext? context = _ctx;
 }
 
-// @Route("/measurements/{Id}", "PATCH")
+// @Route("/measurements/{Id}", "PATCH"
 @CopyWith()
 class PatchMeasurements
     implements
@@ -4127,7 +4132,6 @@ class PatchUserAuthRole
 }
 
 // @Route("/appointments/{Id}", "PUT")
-
 @CopyWith()
 class UpdateAppointments
     implements
@@ -5275,266 +5279,166 @@ class UpdateUserAuthRole
   TypeContext? context = _ctx;
 }
 
-TypeContext _ctx = TypeContext(library: 'dtos', types: <String, TypeInfo>{
-  'Appointments': TypeInfo(TypeOf.@CopyWith()
-class, create: () => Appointments()),
-  'AppUser': TypeInfo(TypeOf.@CopyWith()
-class, create: () => AppUser()),
-  'CrudEvent': TypeInfo(TypeOf.@CopyWith()
-class, create: () => CrudEvent()),
+TypeContext _ctx = TypeContext(library: 'localhost', types: <String, TypeInfo>{
+  'Appointments': TypeInfo(TypeOf.Class, create: () => Appointments()),
+  'AppUser': TypeInfo(TypeOf.Class, create: () => AppUser()),
+  'CrudEvent': TypeInfo(TypeOf.Class, create: () => CrudEvent()),
   'MeasurementDetails':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => MeasurementDetails()),
-  'Measurements': TypeInfo(TypeOf.@CopyWith()
-class, create: () => Measurements()),
-  'MeasurementTypes': TypeInfo(TypeOf.@CopyWith()
-class, create: () => MeasurementTypes()),
-  'Schedules': TypeInfo(TypeOf.@CopyWith()
-class, create: () => Schedules()),
+      TypeInfo(TypeOf.Class, create: () => MeasurementDetails()),
+  'Measurements': TypeInfo(TypeOf.Class, create: () => Measurements()),
+  'MeasurementTypes': TypeInfo(TypeOf.Class, create: () => MeasurementTypes()),
+  'Schedules': TypeInfo(TypeOf.Class, create: () => Schedules()),
   'TreatmentReminderSounds':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => TreatmentReminderSounds()),
-  'Treatments': TypeInfo(TypeOf.@CopyWith()
-class, create: () => Treatments()),
+      TypeInfo(TypeOf.Class, create: () => TreatmentReminderSounds()),
+  'Treatments': TypeInfo(TypeOf.Class, create: () => Treatments()),
   'TreatmentScheduledEvents':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => TreatmentScheduledEvents()),
-  'UserAuthDetails': TypeInfo(TypeOf.@CopyWith()
-class, create: () => UserAuthDetails()),
-  'UserAuthRole': TypeInfo(TypeOf.@CopyWith()
-class, create: () => UserAuthRole()),
-  'ServerStats': TypeInfo(TypeOf.@CopyWith()
-class, create: () => ServerStats()),
-  'Map<String,int?>': TypeInfo(TypeOf.@CopyWith()
-class, create: () => Map<String, int?>()),
+      TypeInfo(TypeOf.Class, create: () => TreatmentScheduledEvents()),
+  'UserAuthDetails': TypeInfo(TypeOf.Class, create: () => UserAuthDetails()),
+  'UserAuthRole': TypeInfo(TypeOf.Class, create: () => UserAuthRole()),
+  'ServerStats': TypeInfo(TypeOf.Class, create: () => ServerStats()),
+  'Map<String,int?>': TypeInfo(TypeOf.Class, create: () => Map<String, int?>()),
   'AdminDashboardResponse':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => AdminDashboardResponse()),
-  'AdminDashboard': TypeInfo(TypeOf.@CopyWith()
-class, create: () => AdminDashboard()),
+      TypeInfo(TypeOf.Class, create: () => AdminDashboardResponse()),
+  'AdminDashboard': TypeInfo(TypeOf.Class, create: () => AdminDashboard()),
   'QueryResponse<Appointments>':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryResponse<Appointments>()),
+      TypeInfo(TypeOf.Class, create: () => QueryResponse<Appointments>()),
   'QueryAppointments':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryAppointments()),
-  'List<Appointments>': TypeInfo(TypeOf.@CopyWith()
-class, create: () => <Appointments>[]),
+      TypeInfo(TypeOf.Class, create: () => QueryAppointments()),
+  'List<Appointments>': TypeInfo(TypeOf.Class, create: () => <Appointments>[]),
   'QueryResponse<AppUser>':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryResponse<AppUser>()),
-  'QueryAppUsers': TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryAppUsers()),
-  'List<AppUser>': TypeInfo(TypeOf.@CopyWith()
-class, create: () => <AppUser>[]),
+      TypeInfo(TypeOf.Class, create: () => QueryResponse<AppUser>()),
+  'QueryAppUsers': TypeInfo(TypeOf.Class, create: () => QueryAppUsers()),
+  'List<AppUser>': TypeInfo(TypeOf.Class, create: () => <AppUser>[]),
   'QueryResponse<CrudEvent>':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryResponse<CrudEvent>()),
-  'QueryCrudEvents': TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryCrudEvents()),
-  'List<CrudEvent>': TypeInfo(TypeOf.@CopyWith()
-class, create: () => <CrudEvent>[]),
+      TypeInfo(TypeOf.Class, create: () => QueryResponse<CrudEvent>()),
+  'QueryCrudEvents': TypeInfo(TypeOf.Class, create: () => QueryCrudEvents()),
+  'List<CrudEvent>': TypeInfo(TypeOf.Class, create: () => <CrudEvent>[]),
   'QueryResponse<MeasurementDetails>':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryResponse<MeasurementDetails>()),
+      TypeInfo(TypeOf.Class, create: () => QueryResponse<MeasurementDetails>()),
   'QueryMeasurementDetails':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryMeasurementDetails()),
+      TypeInfo(TypeOf.Class, create: () => QueryMeasurementDetails()),
   'List<MeasurementDetails>':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => <MeasurementDetails>[]),
+      TypeInfo(TypeOf.Class, create: () => <MeasurementDetails>[]),
   'QueryResponse<Measurements>':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryResponse<Measurements>()),
+      TypeInfo(TypeOf.Class, create: () => QueryResponse<Measurements>()),
   'QueryMeasurements':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryMeasurements()),
-  'List<Measurements>': TypeInfo(TypeOf.@CopyWith()
-class, create: () => <Measurements>[]),
+      TypeInfo(TypeOf.Class, create: () => QueryMeasurements()),
+  'List<Measurements>': TypeInfo(TypeOf.Class, create: () => <Measurements>[]),
   'QueryResponse<MeasurementTypes>':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryResponse<MeasurementTypes>()),
+      TypeInfo(TypeOf.Class, create: () => QueryResponse<MeasurementTypes>()),
   'QueryMeasurementTypes':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryMeasurementTypes()),
+      TypeInfo(TypeOf.Class, create: () => QueryMeasurementTypes()),
   'List<MeasurementTypes>':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => <MeasurementTypes>[]),
+      TypeInfo(TypeOf.Class, create: () => <MeasurementTypes>[]),
   'QueryResponse<Schedules>':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryResponse<Schedules>()),
-  'QuerySchedules': TypeInfo(TypeOf.@CopyWith()
-class, create: () => QuerySchedules()),
-  'List<Schedules>': TypeInfo(TypeOf.@CopyWith()
-class, create: () => <Schedules>[]),
-  'QueryResponse<TreatmentReminderSounds>': TypeInfo(TypeOf.@CopyWith()
-class,
+      TypeInfo(TypeOf.Class, create: () => QueryResponse<Schedules>()),
+  'QuerySchedules': TypeInfo(TypeOf.Class, create: () => QuerySchedules()),
+  'List<Schedules>': TypeInfo(TypeOf.Class, create: () => <Schedules>[]),
+  'QueryResponse<TreatmentReminderSounds>': TypeInfo(TypeOf.Class,
       create: () => QueryResponse<TreatmentReminderSounds>()),
   'QueryTreatmentReminderSounds':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryTreatmentReminderSounds()),
+      TypeInfo(TypeOf.Class, create: () => QueryTreatmentReminderSounds()),
   'List<TreatmentReminderSounds>':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => <TreatmentReminderSounds>[]),
+      TypeInfo(TypeOf.Class, create: () => <TreatmentReminderSounds>[]),
   'QueryResponse<Treatments>':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryResponse<Treatments>()),
-  'QueryTreatments': TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryTreatments()),
-  'List<Treatments>': TypeInfo(TypeOf.@CopyWith()
-class, create: () => <Treatments>[]),
-  'QueryResponse<TreatmentScheduledEvents>': TypeInfo(TypeOf.@CopyWith()
-class,
+      TypeInfo(TypeOf.Class, create: () => QueryResponse<Treatments>()),
+  'QueryTreatments': TypeInfo(TypeOf.Class, create: () => QueryTreatments()),
+  'List<Treatments>': TypeInfo(TypeOf.Class, create: () => <Treatments>[]),
+  'QueryResponse<TreatmentScheduledEvents>': TypeInfo(TypeOf.Class,
       create: () => QueryResponse<TreatmentScheduledEvents>()),
   'QueryTreatmentScheduledEvents':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryTreatmentScheduledEvents()),
+      TypeInfo(TypeOf.Class, create: () => QueryTreatmentScheduledEvents()),
   'List<TreatmentScheduledEvents>':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => <TreatmentScheduledEvents>[]),
+      TypeInfo(TypeOf.Class, create: () => <TreatmentScheduledEvents>[]),
   'QueryResponse<UserAuthDetails>':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryResponse<UserAuthDetails>()),
+      TypeInfo(TypeOf.Class, create: () => QueryResponse<UserAuthDetails>()),
   'QueryUserAuthDetails':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryUserAuthDetails()),
+      TypeInfo(TypeOf.Class, create: () => QueryUserAuthDetails()),
   'List<UserAuthDetails>':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => <UserAuthDetails>[]),
+      TypeInfo(TypeOf.Class, create: () => <UserAuthDetails>[]),
   'QueryResponse<UserAuthRole>':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryResponse<UserAuthRole>()),
+      TypeInfo(TypeOf.Class, create: () => QueryResponse<UserAuthRole>()),
   'QueryUserAuthRoles':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => QueryUserAuthRoles()),
-  'List<UserAuthRole>': TypeInfo(TypeOf.@CopyWith()
-class, create: () => <UserAuthRole>[]),
+      TypeInfo(TypeOf.Class, create: () => QueryUserAuthRoles()),
+  'List<UserAuthRole>': TypeInfo(TypeOf.Class, create: () => <UserAuthRole>[]),
   'CreateAppointments':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => CreateAppointments()),
-  'CreateAppUser': TypeInfo(TypeOf.@CopyWith()
-class, create: () => CreateAppUser()),
-  'CreateCrudEvent': TypeInfo(TypeOf.@CopyWith()
-class, create: () => CreateCrudEvent()),
+      TypeInfo(TypeOf.Class, create: () => CreateAppointments()),
+  'CreateAppUser': TypeInfo(TypeOf.Class, create: () => CreateAppUser()),
+  'CreateCrudEvent': TypeInfo(TypeOf.Class, create: () => CreateCrudEvent()),
   'CreateMeasurementDetails':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => CreateMeasurementDetails()),
+      TypeInfo(TypeOf.Class, create: () => CreateMeasurementDetails()),
   'CreateMeasurements':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => CreateMeasurements()),
+      TypeInfo(TypeOf.Class, create: () => CreateMeasurements()),
   'CreateMeasurementTypes':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => CreateMeasurementTypes()),
-  'CreateSchedules': TypeInfo(TypeOf.@CopyWith()
-class, create: () => CreateSchedules()),
+      TypeInfo(TypeOf.Class, create: () => CreateMeasurementTypes()),
+  'CreateSchedules': TypeInfo(TypeOf.Class, create: () => CreateSchedules()),
   'CreateTreatmentReminderSounds':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => CreateTreatmentReminderSounds()),
-  'CreateTreatments': TypeInfo(TypeOf.@CopyWith()
-class, create: () => CreateTreatments()),
+      TypeInfo(TypeOf.Class, create: () => CreateTreatmentReminderSounds()),
+  'CreateTreatments': TypeInfo(TypeOf.Class, create: () => CreateTreatments()),
   'CreateTreatmentScheduledEvents':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => CreateTreatmentScheduledEvents()),
+      TypeInfo(TypeOf.Class, create: () => CreateTreatmentScheduledEvents()),
   'CreateUserAuthDetails':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => CreateUserAuthDetails()),
+      TypeInfo(TypeOf.Class, create: () => CreateUserAuthDetails()),
   'CreateUserAuthRole':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => CreateUserAuthRole()),
+      TypeInfo(TypeOf.Class, create: () => CreateUserAuthRole()),
   'DeleteAppointments':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => DeleteAppointments()),
-  'DeleteAppUser': TypeInfo(TypeOf.@CopyWith()
-class, create: () => DeleteAppUser()),
-  'DeleteCrudEvent': TypeInfo(TypeOf.@CopyWith()
-class, create: () => DeleteCrudEvent()),
+      TypeInfo(TypeOf.Class, create: () => DeleteAppointments()),
+  'DeleteAppUser': TypeInfo(TypeOf.Class, create: () => DeleteAppUser()),
+  'DeleteCrudEvent': TypeInfo(TypeOf.Class, create: () => DeleteCrudEvent()),
   'DeleteMeasurementDetails':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => DeleteMeasurementDetails()),
+      TypeInfo(TypeOf.Class, create: () => DeleteMeasurementDetails()),
   'DeleteMeasurements':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => DeleteMeasurements()),
+      TypeInfo(TypeOf.Class, create: () => DeleteMeasurements()),
   'DeleteMeasurementTypes':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => DeleteMeasurementTypes()),
-  'DeleteSchedules': TypeInfo(TypeOf.@CopyWith()
-class, create: () => DeleteSchedules()),
+      TypeInfo(TypeOf.Class, create: () => DeleteMeasurementTypes()),
+  'DeleteSchedules': TypeInfo(TypeOf.Class, create: () => DeleteSchedules()),
   'DeleteTreatmentReminderSounds':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => DeleteTreatmentReminderSounds()),
-  'DeleteTreatments': TypeInfo(TypeOf.@CopyWith()
-class, create: () => DeleteTreatments()),
+      TypeInfo(TypeOf.Class, create: () => DeleteTreatmentReminderSounds()),
+  'DeleteTreatments': TypeInfo(TypeOf.Class, create: () => DeleteTreatments()),
   'DeleteTreatmentScheduledEvents':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => DeleteTreatmentScheduledEvents()),
+      TypeInfo(TypeOf.Class, create: () => DeleteTreatmentScheduledEvents()),
   'DeleteUserAuthDetails':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => DeleteUserAuthDetails()),
+      TypeInfo(TypeOf.Class, create: () => DeleteUserAuthDetails()),
   'DeleteUserAuthRole':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => DeleteUserAuthRole()),
+      TypeInfo(TypeOf.Class, create: () => DeleteUserAuthRole()),
   'PatchAppointments':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => PatchAppointments()),
-  'PatchAppUser': TypeInfo(TypeOf.@CopyWith()
-class, create: () => PatchAppUser()),
-  'PatchCrudEvent': TypeInfo(TypeOf.@CopyWith()
-class, create: () => PatchCrudEvent()),
+      TypeInfo(TypeOf.Class, create: () => PatchAppointments()),
+  'PatchAppUser': TypeInfo(TypeOf.Class, create: () => PatchAppUser()),
+  'PatchCrudEvent': TypeInfo(TypeOf.Class, create: () => PatchCrudEvent()),
   'PatchMeasurementDetails':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => PatchMeasurementDetails()),
+      TypeInfo(TypeOf.Class, create: () => PatchMeasurementDetails()),
   'PatchMeasurements':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => PatchMeasurements()),
+      TypeInfo(TypeOf.Class, create: () => PatchMeasurements()),
   'PatchMeasurementTypes':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => PatchMeasurementTypes()),
-  'PatchSchedules': TypeInfo(TypeOf.@CopyWith()
-class, create: () => PatchSchedules()),
+      TypeInfo(TypeOf.Class, create: () => PatchMeasurementTypes()),
+  'PatchSchedules': TypeInfo(TypeOf.Class, create: () => PatchSchedules()),
   'PatchTreatmentReminderSounds':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => PatchTreatmentReminderSounds()),
-  'PatchTreatments': TypeInfo(TypeOf.@CopyWith()
-class, create: () => PatchTreatments()),
+      TypeInfo(TypeOf.Class, create: () => PatchTreatmentReminderSounds()),
+  'PatchTreatments': TypeInfo(TypeOf.Class, create: () => PatchTreatments()),
   'PatchTreatmentScheduledEvents':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => PatchTreatmentScheduledEvents()),
+      TypeInfo(TypeOf.Class, create: () => PatchTreatmentScheduledEvents()),
   'PatchUserAuthDetails':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => PatchUserAuthDetails()),
+      TypeInfo(TypeOf.Class, create: () => PatchUserAuthDetails()),
   'PatchUserAuthRole':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => PatchUserAuthRole()),
+      TypeInfo(TypeOf.Class, create: () => PatchUserAuthRole()),
   'UpdateAppointments':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => UpdateAppointments()),
-  'UpdateAppUser': TypeInfo(TypeOf.@CopyWith()
-class, create: () => UpdateAppUser()),
-  'UpdateCrudEvent': TypeInfo(TypeOf.@CopyWith()
-class, create: () => UpdateCrudEvent()),
+      TypeInfo(TypeOf.Class, create: () => UpdateAppointments()),
+  'UpdateAppUser': TypeInfo(TypeOf.Class, create: () => UpdateAppUser()),
+  'UpdateCrudEvent': TypeInfo(TypeOf.Class, create: () => UpdateCrudEvent()),
   'UpdateMeasurementDetails':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => UpdateMeasurementDetails()),
+      TypeInfo(TypeOf.Class, create: () => UpdateMeasurementDetails()),
   'UpdateMeasurements':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => UpdateMeasurements()),
+      TypeInfo(TypeOf.Class, create: () => UpdateMeasurements()),
   'UpdateMeasurementTypes':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => UpdateMeasurementTypes()),
-  'UpdateSchedules': TypeInfo(TypeOf.@CopyWith()
-class, create: () => UpdateSchedules()),
+      TypeInfo(TypeOf.Class, create: () => UpdateMeasurementTypes()),
+  'UpdateSchedules': TypeInfo(TypeOf.Class, create: () => UpdateSchedules()),
   'UpdateTreatmentReminderSounds':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => UpdateTreatmentReminderSounds()),
-  'UpdateTreatments': TypeInfo(TypeOf.@CopyWith()
-class, create: () => UpdateTreatments()),
+      TypeInfo(TypeOf.Class, create: () => UpdateTreatmentReminderSounds()),
+  'UpdateTreatments': TypeInfo(TypeOf.Class, create: () => UpdateTreatments()),
   'UpdateTreatmentScheduledEvents':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => UpdateTreatmentScheduledEvents()),
+      TypeInfo(TypeOf.Class, create: () => UpdateTreatmentScheduledEvents()),
   'UpdateUserAuthDetails':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => UpdateUserAuthDetails()),
+      TypeInfo(TypeOf.Class, create: () => UpdateUserAuthDetails()),
   'UpdateUserAuthRole':
-      TypeInfo(TypeOf.@CopyWith()
-class, create: () => UpdateUserAuthRole()),
+      TypeInfo(TypeOf.Class, create: () => UpdateUserAuthRole()),
 });
