@@ -1,3 +1,4 @@
+import 'package:tmh/main.dart';
 import 'package:tmh/src/localization/string_hardcoded.dart';
 import 'package:tmh/src/routing/app_router.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,8 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final goRouter = ref.watch(goRouterProvider);
+    // final fakeRepo = ref.watch(fakeRepoProvider);
+    // await fakeRepo.checkAuth();
     return MaterialApp.router(
       routeInformationParser: goRouter.routeInformationParser,
       routerDelegate: goRouter.routerDelegate,

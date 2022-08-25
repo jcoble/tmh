@@ -4,7 +4,7 @@ import 'package:tmh/src/features/products/domain/product.dart';
 const kTestProducts = [
   Product(
     id: '1',
-    imageUrl: '/products/bruschetta-plate.jpg',
+    imageUrl: 'assets/products/bruschetta-plate.jpg',
     title: 'Bruschetta plate',
     description: 'Lorem ipsum',
     price: 15,
@@ -14,7 +14,7 @@ const kTestProducts = [
   ),
   Product(
     id: '2',
-    imageUrl: '/products/mozzarella-plate.jpg',
+    imageUrl: 'assets/products/mozzarella-plate.jpg',
     title: 'Mozzarella plate',
     description: 'Lorem ipsum',
     price: 13,
@@ -24,7 +24,7 @@ const kTestProducts = [
   ),
   Product(
     id: '3',
-    imageUrl: '/products/pasta-plate.jpg',
+    imageUrl: 'assets/products/pasta-plate.jpg',
     title: 'Pasta plate',
     description: 'Lorem ipsum',
     price: 17,
@@ -34,7 +34,7 @@ const kTestProducts = [
   ),
   Product(
     id: '4',
-    imageUrl: '/products/piggy-blue.jpg',
+    imageUrl: 'assets/products/piggy-blue.jpg',
     title: 'Piggy Bank Blue',
     description: 'Lorem ipsum',
     price: 12,
@@ -42,7 +42,7 @@ const kTestProducts = [
   ),
   Product(
     id: '5',
-    imageUrl: '/products/piggy-green.jpg',
+    imageUrl: 'assets/products/piggy-green.jpg',
     title: 'Piggy Bank Green',
     description: 'Lorem ipsum',
     price: 12,
@@ -58,7 +58,7 @@ const kTestProducts = [
   ),
   Product(
     id: '7',
-    imageUrl: '/products/pizza-plate.jpg',
+    imageUrl: 'assets/products/pizza-plate.jpg',
     title: 'Pizza plate',
     description: 'Lorem ipsum',
     price: 18,
@@ -66,7 +66,7 @@ const kTestProducts = [
   ),
   Product(
     id: '8',
-    imageUrl: '/products/plate-and-bowl.jpg',
+    imageUrl: 'assets/products/plate-and-bowl.jpg',
     title: 'Plate and Bowl',
     description: 'Lorem ipsum',
     price: 21,
@@ -74,7 +74,7 @@ const kTestProducts = [
   ),
   Product(
     id: '9',
-    imageUrl: '/products/salt-pepper-lemon.jpg',
+    imageUrl: 'assets/products/salt-pepper-lemon.jpg',
     title: 'Salt and pepper lemon',
     description: 'Lorem ipsum',
     price: 11,
@@ -82,7 +82,7 @@ const kTestProducts = [
   ),
   Product(
     id: '10',
-    imageUrl: '/products/salt-pepper-olives.jpg',
+    imageUrl: 'assets/products/salt-pepper-olives.jpg',
     title: 'Salt and pepper olives',
     description: 'Lorem ipsum',
     price: 11,
@@ -90,7 +90,7 @@ const kTestProducts = [
   ),
   Product(
     id: '11',
-    imageUrl: '/products/snacks-plate.jpg',
+    imageUrl: 'assets/products/snacks-plate.jpg',
     title: 'Snacks plate',
     description: 'Lorem ipsum',
     price: 24,
@@ -98,7 +98,7 @@ const kTestProducts = [
   ),
   Product(
     id: '12',
-    imageUrl: '/products/flowers-plate.jpg',
+    imageUrl: 'assets/products/flowers-plate.jpg',
     title: 'Flowers plate',
     description: 'Lorem ipsum',
     price: 22,
@@ -106,7 +106,7 @@ const kTestProducts = [
   ),
   Product(
     id: '13',
-    imageUrl: '/products/juicer-citrus-fruits.jpg',
+    imageUrl: 'assets/products/juicer-citrus-fruits.jpg',
     title: 'Juicer for citrus fruits',
     description: 'Lorem ipsum',
     price: 14,
@@ -114,7 +114,7 @@ const kTestProducts = [
   ),
   Product(
     id: '14',
-    imageUrl: '/products/honey-pot.jpg',
+    imageUrl: 'assets/products/honey-pot.jpg',
     title: 'Honey pot',
     description: 'Lorem ipsum',
     price: 16,

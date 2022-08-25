@@ -19,6 +19,10 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'dtos.g.dart';
 
+Future<AuthenticateResponse> authenticateResponseFromJson(Map<String, dynamic> json) async {
+  return AuthenticateResponse.fromJson(json);
+}
+
 @CopyWith()
 class Appointments implements IConvertible {
   String? id;
@@ -47,14 +51,10 @@ class Appointments implements IConvertible {
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
-    apptDateTime =
-        JsonConverters.fromJson(json['apptDateTime'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    apptDateTime = JsonConverters.fromJson(json['apptDateTime'], 'DateTime', context!);
     place = json['place'];
     placeNotes = json['placeNotes'];
     providerName = json['providerName'];
@@ -67,8 +67,7 @@ class Appointments implements IConvertible {
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
         'updatedAt': JsonConverters.toJson(updatedAt, 'DateTime', context!),
         'deletedAt': JsonConverters.toJson(deletedAt, 'DateTime', context!),
-        'apptDateTime':
-            JsonConverters.toJson(apptDateTime, 'DateTime', context!),
+        'apptDateTime': JsonConverters.toJson(apptDateTime, 'DateTime', context!),
         'place': place,
         'placeNotes': placeNotes,
         'providerName': providerName,
@@ -174,8 +173,7 @@ class AppUser implements IConvertible {
   fromMap(Map<String, dynamic> json) {
     profileUrl = json['profileUrl'];
     lastLoginIp = json['lastLoginIp'];
-    lastLoginDate =
-        JsonConverters.fromJson(json['lastLoginDate'], 'DateTime', context!);
+    lastLoginDate = JsonConverters.fromJson(json['lastLoginDate'], 'DateTime', context!);
     id = json['id'];
     userName = json['userName'];
     email = json['email'];
@@ -185,8 +183,7 @@ class AppUser implements IConvertible {
     lastName = json['lastName'];
     displayName = json['displayName'];
     company = json['company'];
-    birthDate =
-        JsonConverters.fromJson(json['birthDate'], 'DateTime', context!);
+    birthDate = JsonConverters.fromJson(json['birthDate'], 'DateTime', context!);
     birthDateRaw = json['birthDateRaw'];
     address = json['address'];
     address2 = json['address2'];
@@ -206,15 +203,11 @@ class AppUser implements IConvertible {
     digestHa1Hash = json['digestHa1Hash'];
     roles = json['roles'];
     permissions = json['permissions'];
-    createdDate =
-        JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
-    modifiedDate =
-        JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
+    createdDate = JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
+    modifiedDate = JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
     invalidLoginAttempts = json['invalidLoginAttempts'];
-    lastLoginAttempt =
-        JsonConverters.fromJson(json['lastLoginAttempt'], 'DateTime', context!);
-    lockedDate =
-        JsonConverters.fromJson(json['lockedDate'], 'DateTime', context!);
+    lastLoginAttempt = JsonConverters.fromJson(json['lastLoginAttempt'], 'DateTime', context!);
+    lockedDate = JsonConverters.fromJson(json['lockedDate'], 'DateTime', context!);
     recoveryToken = json['recoveryToken'];
     refId = json['refId'];
     refIdStr = json['refIdStr'];
@@ -226,8 +219,7 @@ class AppUser implements IConvertible {
   Map<String, dynamic> toJson() => {
         'profileUrl': profileUrl,
         'lastLoginIp': lastLoginIp,
-        'lastLoginDate':
-            JsonConverters.toJson(lastLoginDate, 'DateTime', context!),
+        'lastLoginDate': JsonConverters.toJson(lastLoginDate, 'DateTime', context!),
         'id': id,
         'userName': userName,
         'email': email,
@@ -258,11 +250,9 @@ class AppUser implements IConvertible {
         'roles': roles,
         'permissions': permissions,
         'createdDate': JsonConverters.toJson(createdDate, 'DateTime', context!),
-        'modifiedDate':
-            JsonConverters.toJson(modifiedDate, 'DateTime', context!),
+        'modifiedDate': JsonConverters.toJson(modifiedDate, 'DateTime', context!),
         'invalidLoginAttempts': invalidLoginAttempts,
-        'lastLoginAttempt':
-            JsonConverters.toJson(lastLoginAttempt, 'DateTime', context!),
+        'lastLoginAttempt': JsonConverters.toJson(lastLoginAttempt, 'DateTime', context!),
         'lockedDate': JsonConverters.toJson(lockedDate, 'DateTime', context!),
         'recoveryToken': recoveryToken,
         'refId': refId,
@@ -348,8 +338,7 @@ class CrudEvent implements IConvertible {
     eventType = json['eventType'];
     model = json['model'];
     modelId = json['modelId'];
-    eventDate =
-        JsonConverters.fromJson(json['eventDate'], 'DateTime', context!);
+    eventDate = JsonConverters.fromJson(json['eventDate'], 'DateTime', context!);
     rowsUpdated = json['rowsUpdated'];
     requestType = json['requestType'];
     requestBody = json['requestBody'];
@@ -417,12 +406,9 @@ class MeasurementDetails implements IConvertible {
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
     treatmentId = json['treatmentId'];
     treatmentName = json['treatmentName'];
     measurementTypeId = json['measurementTypeId'];
@@ -478,12 +464,9 @@ class Measurements implements IConvertible {
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
     name = json['name'];
     description = json['description'];
     treatmentId = json['treatmentId'];
@@ -517,25 +500,16 @@ class MeasurementTypes implements IConvertible {
   String? treatmentTypeId;
 
   MeasurementTypes(
-      {this.id,
-      this.createdAt,
-      this.updatedAt,
-      this.deletedAt,
-      this.name,
-      this.description,
-      this.treatmentTypeId});
+      {this.id, this.createdAt, this.updatedAt, this.deletedAt, this.name, this.description, this.treatmentTypeId});
   MeasurementTypes.fromJson(Map<String, dynamic> json) {
     fromMap(json);
   }
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
     name = json['name'];
     description = json['description'];
     treatmentTypeId = json['treatmentTypeId'];
@@ -596,27 +570,20 @@ class Schedules implements IConvertible {
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
-    scheduleTime =
-        JsonConverters.fromJson(json['scheduleTime'], 'DateTime', context!);
-    startDate =
-        JsonConverters.fromJson(json['startDate'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    scheduleTime = JsonConverters.fromJson(json['scheduleTime'], 'DateTime', context!);
+    startDate = JsonConverters.fromJson(json['startDate'], 'DateTime', context!);
     endDate = JsonConverters.fromJson(json['endDate'], 'DateTime', context!);
     treatmentId = json['treatmentId'];
     treatmentName = json['treatmentName'];
     isWeekendDifferent = json['isWeekendDifferent'];
     appointmentId = json['appointmentId'];
     treatmentUserId = json['treatmentUserId'];
-    lastRunTime =
-        JsonConverters.fromJson(json['lastRunTime'], 'DateTime', context!);
+    lastRunTime = JsonConverters.fromJson(json['lastRunTime'], 'DateTime', context!);
     lastRunStatus = json['lastRunStatus'];
-    nextRunDateTime =
-        JsonConverters.fromJson(json['nextRunDateTime'], 'DateTime', context!);
+    nextRunDateTime = JsonConverters.fromJson(json['nextRunDateTime'], 'DateTime', context!);
     return this;
   }
 
@@ -625,8 +592,7 @@ class Schedules implements IConvertible {
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
         'updatedAt': JsonConverters.toJson(updatedAt, 'DateTime', context!),
         'deletedAt': JsonConverters.toJson(deletedAt, 'DateTime', context!),
-        'scheduleTime':
-            JsonConverters.toJson(scheduleTime, 'DateTime', context!),
+        'scheduleTime': JsonConverters.toJson(scheduleTime, 'DateTime', context!),
         'startDate': JsonConverters.toJson(startDate, 'DateTime', context!),
         'endDate': JsonConverters.toJson(endDate, 'DateTime', context!),
         'treatmentId': treatmentId,
@@ -636,8 +602,7 @@ class Schedules implements IConvertible {
         'treatmentUserId': treatmentUserId,
         'lastRunTime': JsonConverters.toJson(lastRunTime, 'DateTime', context!),
         'lastRunStatus': lastRunStatus,
-        'nextRunDateTime':
-            JsonConverters.toJson(nextRunDateTime, 'DateTime', context!)
+        'nextRunDateTime': JsonConverters.toJson(nextRunDateTime, 'DateTime', context!)
       };
 
   getTypeName() => "Schedules";
@@ -651,16 +616,14 @@ class TreatmentReminderSounds implements IConvertible {
   String? name;
   String? description;
 
-  TreatmentReminderSounds(
-      {this.id, this.createdAt, this.name, this.description});
+  TreatmentReminderSounds({this.id, this.createdAt, this.name, this.description});
   TreatmentReminderSounds.fromJson(Map<String, dynamic> json) {
     fromMap(json);
   }
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
     name = json['name'];
     description = json['description'];
     return this;
@@ -719,12 +682,9 @@ class Treatments implements IConvertible {
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
     name = json['name'];
     description = json['description'];
     treatmentType = json['treatmentType'];
@@ -821,12 +781,9 @@ class TreatmentScheduledEvents implements IConvertible {
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
     mood = json['mood'];
     scheduleId = json['scheduleId'];
     treatmentId = json['treatmentId'];
@@ -843,12 +800,9 @@ class TreatmentScheduledEvents implements IConvertible {
     unitsTaken = json['unitsTaken'];
     unitTypesId = json['unitTypesId'];
     unitsTypeName = json['unitsTypeName'];
-    dateTimeEventPlanned = JsonConverters.fromJson(
-        json['dateTimeEventPlanned'], 'DateTime', context!);
-    dateTimeUserConfirmedEvent = JsonConverters.fromJson(
-        json['dateTimeUserConfirmedEvent'], 'DateTime', context!);
-    dateTimeSkippedEvent = JsonConverters.fromJson(
-        json['dateTimeSkippedEvent'], 'DateTime', context!);
+    dateTimeEventPlanned = JsonConverters.fromJson(json['dateTimeEventPlanned'], 'DateTime', context!);
+    dateTimeUserConfirmedEvent = JsonConverters.fromJson(json['dateTimeUserConfirmedEvent'], 'DateTime', context!);
+    dateTimeSkippedEvent = JsonConverters.fromJson(json['dateTimeSkippedEvent'], 'DateTime', context!);
     customerNotes = json['customerNotes'];
     return this;
   }
@@ -874,12 +828,9 @@ class TreatmentScheduledEvents implements IConvertible {
         'unitsTaken': unitsTaken,
         'unitTypesId': unitTypesId,
         'unitsTypeName': unitsTypeName,
-        'dateTimeEventPlanned':
-            JsonConverters.toJson(dateTimeEventPlanned, 'DateTime', context!),
-        'dateTimeUserConfirmedEvent': JsonConverters.toJson(
-            dateTimeUserConfirmedEvent, 'DateTime', context!),
-        'dateTimeSkippedEvent':
-            JsonConverters.toJson(dateTimeSkippedEvent, 'DateTime', context!),
+        'dateTimeEventPlanned': JsonConverters.toJson(dateTimeEventPlanned, 'DateTime', context!),
+        'dateTimeUserConfirmedEvent': JsonConverters.toJson(dateTimeUserConfirmedEvent, 'DateTime', context!),
+        'dateTimeSkippedEvent': JsonConverters.toJson(dateTimeSkippedEvent, 'DateTime', context!),
         'customerNotes': customerNotes
       };
 
@@ -984,8 +935,7 @@ class UserAuthDetails implements IConvertible {
     company = json['company'];
     email = json['email'];
     phoneNumber = json['phoneNumber'];
-    birthDate =
-        JsonConverters.fromJson(json['birthDate'], 'DateTime', context!);
+    birthDate = JsonConverters.fromJson(json['birthDate'], 'DateTime', context!);
     birthDateRaw = json['birthDateRaw'];
     address = json['address'];
     address2 = json['address2'];
@@ -1000,17 +950,14 @@ class UserAuthDetails implements IConvertible {
     postalCode = json['postalCode'];
     timeZone = json['timeZone'];
     refreshToken = json['refreshToken'];
-    refreshTokenExpiry = JsonConverters.fromJson(
-        json['refreshTokenExpiry'], 'DateTime', context!);
+    refreshTokenExpiry = JsonConverters.fromJson(json['refreshTokenExpiry'], 'DateTime', context!);
     requestToken = json['requestToken'];
     requestTokenSecret = json['requestTokenSecret'];
     items = JsonConverters.toStringMap(json['items']);
     accessToken = json['accessToken'];
     accessTokenSecret = json['accessTokenSecret'];
-    createdDate =
-        JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
-    modifiedDate =
-        JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
+    createdDate = JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
+    modifiedDate = JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
     refId = json['refId'];
     refIdStr = json['refIdStr'];
     meta = JsonConverters.toStringMap(json['meta']);
@@ -1045,16 +992,14 @@ class UserAuthDetails implements IConvertible {
         'postalCode': postalCode,
         'timeZone': timeZone,
         'refreshToken': refreshToken,
-        'refreshTokenExpiry':
-            JsonConverters.toJson(refreshTokenExpiry, 'DateTime', context!),
+        'refreshTokenExpiry': JsonConverters.toJson(refreshTokenExpiry, 'DateTime', context!),
         'requestToken': requestToken,
         'requestTokenSecret': requestTokenSecret,
         'items': items,
         'accessToken': accessToken,
         'accessTokenSecret': accessTokenSecret,
         'createdDate': JsonConverters.toJson(createdDate, 'DateTime', context!),
-        'modifiedDate':
-            JsonConverters.toJson(modifiedDate, 'DateTime', context!),
+        'modifiedDate': JsonConverters.toJson(modifiedDate, 'DateTime', context!),
         'refId': refId,
         'refIdStr': refIdStr,
         'meta': meta
@@ -1095,10 +1040,8 @@ class UserAuthRole implements IConvertible {
     userAuthId = json['userAuthId'];
     role = json['role'];
     permission = json['permission'];
-    createdDate =
-        JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
-    modifiedDate =
-        JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
+    createdDate = JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
+    modifiedDate = JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
     refId = json['refId'];
     refIdStr = json['refIdStr'];
     meta = JsonConverters.toStringMap(json['meta']);
@@ -1111,8 +1054,7 @@ class UserAuthRole implements IConvertible {
         'role': role,
         'permission': permission,
         'createdDate': JsonConverters.toJson(createdDate, 'DateTime', context!),
-        'modifiedDate':
-            JsonConverters.toJson(modifiedDate, 'DateTime', context!),
+        'modifiedDate': JsonConverters.toJson(modifiedDate, 'DateTime', context!),
         'refId': refId,
         'refIdStr': refIdStr,
         'meta': meta
@@ -1129,19 +1071,16 @@ class ServerStats implements IConvertible {
   String? mqDescription;
   Map<String, int?>? mqWorkers;
 
-  ServerStats(
-      {this.redis, this.serverEvents, this.mqDescription, this.mqWorkers});
+  ServerStats({this.redis, this.serverEvents, this.mqDescription, this.mqWorkers});
   ServerStats.fromJson(Map<String, dynamic> json) {
     fromMap(json);
   }
 
   fromMap(Map<String, dynamic> json) {
-    redis =
-        JsonConverters.fromJson(json['redis'], 'Map<String,int?>', context!);
+    redis = JsonConverters.fromJson(json['redis'], 'Map<String,int?>', context!);
     serverEvents = JsonConverters.toStringMap(json['serverEvents']);
     mqDescription = json['mqDescription'];
-    mqWorkers = JsonConverters.fromJson(
-        json['mqWorkers'], 'Map<String,int?>', context!);
+    mqWorkers = JsonConverters.fromJson(json['mqWorkers'], 'Map<String,int?>', context!);
     return this;
   }
 
@@ -1149,8 +1088,7 @@ class ServerStats implements IConvertible {
         'redis': JsonConverters.toJson(redis, 'Map<String,int?>', context!),
         'serverEvents': serverEvents,
         'mqDescription': mqDescription,
-        'mqWorkers':
-            JsonConverters.toJson(mqWorkers, 'Map<String,int?>', context!)
+        'mqWorkers': JsonConverters.toJson(mqWorkers, 'Map<String,int?>', context!)
       };
 
   getTypeName() => "ServerStats";
@@ -1168,18 +1106,14 @@ class AdminDashboardResponse implements IConvertible {
   }
 
   fromMap(Map<String, dynamic> json) {
-    serverStats =
-        JsonConverters.fromJson(json['serverStats'], 'ServerStats', context!);
-    responseStatus = JsonConverters.fromJson(
-        json['responseStatus'], 'ResponseStatus', context!);
+    serverStats = JsonConverters.fromJson(json['serverStats'], 'ServerStats', context!);
+    responseStatus = JsonConverters.fromJson(json['responseStatus'], 'ResponseStatus', context!);
     return this;
   }
 
   Map<String, dynamic> toJson() => {
-        'serverStats':
-            JsonConverters.toJson(serverStats, 'ServerStats', context!),
-        'responseStatus':
-            JsonConverters.toJson(responseStatus, 'ResponseStatus', context!)
+        'serverStats': JsonConverters.toJson(serverStats, 'ServerStats', context!),
+        'responseStatus': JsonConverters.toJson(responseStatus, 'ResponseStatus', context!)
       };
 
   getTypeName() => "AdminDashboardResponse";
@@ -1228,8 +1162,7 @@ class QueryAppointments extends QueryDb<Appointments>
 // @Route("/appusers", "GET")
 // @Route("/appusers/{Id}", "GET")
 
-class QueryAppUsers extends QueryDb<AppUser>
-    implements IReturn<QueryResponse<AppUser>>, IGet, IConvertible {
+class QueryAppUsers extends QueryDb<AppUser> implements IReturn<QueryResponse<AppUser>>, IGet, IConvertible {
   int? id;
 
   QueryAppUsers({this.id});
@@ -1254,8 +1187,7 @@ class QueryAppUsers extends QueryDb<AppUser>
 // @Route("/crudevents", "GET")
 // @Route("/crudevents/{Id}", "GET")
 
-class QueryCrudEvents extends QueryDb<CrudEvent>
-    implements IReturn<QueryResponse<CrudEvent>>, IGet, IConvertible {
+class QueryCrudEvents extends QueryDb<CrudEvent> implements IReturn<QueryResponse<CrudEvent>>, IGet, IConvertible {
   int? id;
 
   QueryCrudEvents({this.id});
@@ -1355,8 +1287,7 @@ class QueryMeasurementTypes extends QueryDb<MeasurementTypes>
 
 // @Route("/schedules", "GET")
 // @Route("/schedules/{Id}", "GET")
-class QuerySchedules extends QueryDb<Schedules>
-    implements IReturn<QueryResponse<Schedules>>, IGet, IConvertible {
+class QuerySchedules extends QueryDb<Schedules> implements IReturn<QueryResponse<Schedules>>, IGet, IConvertible {
   String? id;
 
   QuerySchedules({this.id});
@@ -1382,10 +1313,7 @@ class QuerySchedules extends QueryDb<Schedules>
 // @Route("/treatmentremindersounds/{Id}", "GET")
 @CopyWith()
 class QueryTreatmentReminderSounds extends QueryDb<TreatmentReminderSounds>
-    implements
-        IReturn<QueryResponse<TreatmentReminderSounds>>,
-        IGet,
-        IConvertible {
+    implements IReturn<QueryResponse<TreatmentReminderSounds>>, IGet, IConvertible {
   String? id;
 
   QueryTreatmentReminderSounds({this.id});
@@ -1409,8 +1337,7 @@ class QueryTreatmentReminderSounds extends QueryDb<TreatmentReminderSounds>
 
 // @Route("/treatments", "GET")
 // @Route("/treatments/{Id}", "GET")
-class QueryTreatments extends QueryDb<Treatments>
-    implements IReturn<QueryResponse<Treatments>>, IGet, IConvertible {
+class QueryTreatments extends QueryDb<Treatments> implements IReturn<QueryResponse<Treatments>>, IGet, IConvertible {
   String? id;
 
   QueryTreatments({this.id});
@@ -1435,10 +1362,7 @@ class QueryTreatments extends QueryDb<Treatments>
 // @Route("/treatmentscheduledevents", "GET")
 // @Route("/treatmentscheduledevents/{Id}", "GET")
 class QueryTreatmentScheduledEvents extends QueryDb<TreatmentScheduledEvents>
-    implements
-        IReturn<QueryResponse<TreatmentScheduledEvents>>,
-        IGet,
-        IConvertible {
+    implements IReturn<QueryResponse<TreatmentScheduledEvents>>, IGet, IConvertible {
   String? id;
 
   QueryTreatmentScheduledEvents({this.id});
@@ -1512,12 +1436,7 @@ class QueryUserAuthRoles extends QueryDb<UserAuthRole>
 }
 
 // @Route("/appointments", "POST")
-class CreateAppointments
-    implements
-        IReturn<IdResponse>,
-        IPost,
-        ICreateDb<Appointments>,
-        IConvertible {
+class CreateAppointments implements IReturn<IdResponse>, IPost, ICreateDb<Appointments>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -1544,14 +1463,10 @@ class CreateAppointments
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
-    apptDateTime =
-        JsonConverters.fromJson(json['apptDateTime'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    apptDateTime = JsonConverters.fromJson(json['apptDateTime'], 'DateTime', context!);
     place = json['place'];
     placeNotes = json['placeNotes'];
     providerName = json['providerName'];
@@ -1564,8 +1479,7 @@ class CreateAppointments
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
         'updatedAt': JsonConverters.toJson(updatedAt, 'DateTime', context!),
         'deletedAt': JsonConverters.toJson(deletedAt, 'DateTime', context!),
-        'apptDateTime':
-            JsonConverters.toJson(apptDateTime, 'DateTime', context!),
+        'apptDateTime': JsonConverters.toJson(apptDateTime, 'DateTime', context!),
         'place': place,
         'placeNotes': placeNotes,
         'providerName': providerName,
@@ -1579,8 +1493,7 @@ class CreateAppointments
 }
 
 // @Route("/appusers", "POST")
-class CreateAppUser
-    implements IReturn<IdResponse>, IPost, ICreateDb<AppUser>, IConvertible {
+class CreateAppUser implements IReturn<IdResponse>, IPost, ICreateDb<AppUser>, IConvertible {
   String? profileUrl;
   String? lastLoginIp;
   DateTime? lastLoginDate;
@@ -1672,8 +1585,7 @@ class CreateAppUser
   fromMap(Map<String, dynamic> json) {
     profileUrl = json['profileUrl'];
     lastLoginIp = json['lastLoginIp'];
-    lastLoginDate =
-        JsonConverters.fromJson(json['lastLoginDate'], 'DateTime', context!);
+    lastLoginDate = JsonConverters.fromJson(json['lastLoginDate'], 'DateTime', context!);
     userName = json['userName'];
     email = json['email'];
     primaryEmail = json['primaryEmail'];
@@ -1682,8 +1594,7 @@ class CreateAppUser
     lastName = json['lastName'];
     displayName = json['displayName'];
     company = json['company'];
-    birthDate =
-        JsonConverters.fromJson(json['birthDate'], 'DateTime', context!);
+    birthDate = JsonConverters.fromJson(json['birthDate'], 'DateTime', context!);
     birthDateRaw = json['birthDateRaw'];
     address = json['address'];
     address2 = json['address2'];
@@ -1703,15 +1614,11 @@ class CreateAppUser
     digestHa1Hash = json['digestHa1Hash'];
     roles = json['roles'];
     permissions = json['permissions'];
-    createdDate =
-        JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
-    modifiedDate =
-        JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
+    createdDate = JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
+    modifiedDate = JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
     invalidLoginAttempts = json['invalidLoginAttempts'];
-    lastLoginAttempt =
-        JsonConverters.fromJson(json['lastLoginAttempt'], 'DateTime', context!);
-    lockedDate =
-        JsonConverters.fromJson(json['lockedDate'], 'DateTime', context!);
+    lastLoginAttempt = JsonConverters.fromJson(json['lastLoginAttempt'], 'DateTime', context!);
+    lockedDate = JsonConverters.fromJson(json['lockedDate'], 'DateTime', context!);
     recoveryToken = json['recoveryToken'];
     refId = json['refId'];
     refIdStr = json['refIdStr'];
@@ -1723,8 +1630,7 @@ class CreateAppUser
   Map<String, dynamic> toJson() => {
         'profileUrl': profileUrl,
         'lastLoginIp': lastLoginIp,
-        'lastLoginDate':
-            JsonConverters.toJson(lastLoginDate, 'DateTime', context!),
+        'lastLoginDate': JsonConverters.toJson(lastLoginDate, 'DateTime', context!),
         'userName': userName,
         'email': email,
         'primaryEmail': primaryEmail,
@@ -1754,11 +1660,9 @@ class CreateAppUser
         'roles': roles,
         'permissions': permissions,
         'createdDate': JsonConverters.toJson(createdDate, 'DateTime', context!),
-        'modifiedDate':
-            JsonConverters.toJson(modifiedDate, 'DateTime', context!),
+        'modifiedDate': JsonConverters.toJson(modifiedDate, 'DateTime', context!),
         'invalidLoginAttempts': invalidLoginAttempts,
-        'lastLoginAttempt':
-            JsonConverters.toJson(lastLoginAttempt, 'DateTime', context!),
+        'lastLoginAttempt': JsonConverters.toJson(lastLoginAttempt, 'DateTime', context!),
         'lockedDate': JsonConverters.toJson(lockedDate, 'DateTime', context!),
         'recoveryToken': recoveryToken,
         'refId': refId,
@@ -1774,8 +1678,7 @@ class CreateAppUser
 }
 
 // @Route("/crudevents", "POST")
-class CreateCrudEvent
-    implements IReturn<IdResponse>, IPost, ICreateDb<CrudEvent>, IConvertible {
+class CreateCrudEvent implements IReturn<IdResponse>, IPost, ICreateDb<CrudEvent>, IConvertible {
   String? eventType;
   String? model;
   String? modelId;
@@ -1814,8 +1717,7 @@ class CreateCrudEvent
     eventType = json['eventType'];
     model = json['model'];
     modelId = json['modelId'];
-    eventDate =
-        JsonConverters.fromJson(json['eventDate'], 'DateTime', context!);
+    eventDate = JsonConverters.fromJson(json['eventDate'], 'DateTime', context!);
     rowsUpdated = json['rowsUpdated'];
     requestType = json['requestType'];
     requestBody = json['requestBody'];
@@ -1853,12 +1755,7 @@ class CreateCrudEvent
 }
 
 // @Route("/measurementdetails", "POST")
-class CreateMeasurementDetails
-    implements
-        IReturn<IdResponse>,
-        IPost,
-        ICreateDb<MeasurementDetails>,
-        IConvertible {
+class CreateMeasurementDetails implements IReturn<IdResponse>, IPost, ICreateDb<MeasurementDetails>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -1889,12 +1786,9 @@ class CreateMeasurementDetails
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
     treatmentId = json['treatmentId'];
     treatmentName = json['treatmentName'];
     measurementTypeId = json['measurementTypeId'];
@@ -1927,12 +1821,7 @@ class CreateMeasurementDetails
 
 // @Route("/measurements", "POST")
 @CopyWith()
-class CreateMeasurements
-    implements
-        IReturn<IdResponse>,
-        IPost,
-        ICreateDb<Measurements>,
-        IConvertible {
+class CreateMeasurements implements IReturn<IdResponse>, IPost, ICreateDb<Measurements>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -1957,12 +1846,9 @@ class CreateMeasurements
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
     name = json['name'];
     description = json['description'];
     treatmentId = json['treatmentId'];
@@ -1989,12 +1875,7 @@ class CreateMeasurements
 
 // @Route("/measurementtypes", "POST")
 @CopyWith()
-class CreateMeasurementTypes
-    implements
-        IReturn<IdResponse>,
-        IPost,
-        ICreateDb<MeasurementTypes>,
-        IConvertible {
+class CreateMeasurementTypes implements IReturn<IdResponse>, IPost, ICreateDb<MeasurementTypes>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -2004,25 +1885,16 @@ class CreateMeasurementTypes
   String? treatmentTypeId;
 
   CreateMeasurementTypes(
-      {this.id,
-      this.createdAt,
-      this.updatedAt,
-      this.deletedAt,
-      this.name,
-      this.description,
-      this.treatmentTypeId});
+      {this.id, this.createdAt, this.updatedAt, this.deletedAt, this.name, this.description, this.treatmentTypeId});
   CreateMeasurementTypes.fromJson(Map<String, dynamic> json) {
     fromMap(json);
   }
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
     name = json['name'];
     description = json['description'];
     treatmentTypeId = json['treatmentTypeId'];
@@ -2047,8 +1919,7 @@ class CreateMeasurementTypes
 
 // @Route("/schedules", "POST")
 @CopyWith()
-class CreateSchedules
-    implements IReturn<IdResponse>, IPost, ICreateDb<Schedules>, IConvertible {
+class CreateSchedules implements IReturn<IdResponse>, IPost, ICreateDb<Schedules>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -2087,27 +1958,20 @@ class CreateSchedules
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
-    scheduleTime =
-        JsonConverters.fromJson(json['scheduleTime'], 'DateTime', context!);
-    startDate =
-        JsonConverters.fromJson(json['startDate'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    scheduleTime = JsonConverters.fromJson(json['scheduleTime'], 'DateTime', context!);
+    startDate = JsonConverters.fromJson(json['startDate'], 'DateTime', context!);
     endDate = JsonConverters.fromJson(json['endDate'], 'DateTime', context!);
     treatmentId = json['treatmentId'];
     treatmentName = json['treatmentName'];
     isWeekendDifferent = json['isWeekendDifferent'];
     appointmentId = json['appointmentId'];
     treatmentUserId = json['treatmentUserId'];
-    lastRunTime =
-        JsonConverters.fromJson(json['lastRunTime'], 'DateTime', context!);
+    lastRunTime = JsonConverters.fromJson(json['lastRunTime'], 'DateTime', context!);
     lastRunStatus = json['lastRunStatus'];
-    nextRunDateTime =
-        JsonConverters.fromJson(json['nextRunDateTime'], 'DateTime', context!);
+    nextRunDateTime = JsonConverters.fromJson(json['nextRunDateTime'], 'DateTime', context!);
     return this;
   }
 
@@ -2116,8 +1980,7 @@ class CreateSchedules
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
         'updatedAt': JsonConverters.toJson(updatedAt, 'DateTime', context!),
         'deletedAt': JsonConverters.toJson(deletedAt, 'DateTime', context!),
-        'scheduleTime':
-            JsonConverters.toJson(scheduleTime, 'DateTime', context!),
+        'scheduleTime': JsonConverters.toJson(scheduleTime, 'DateTime', context!),
         'startDate': JsonConverters.toJson(startDate, 'DateTime', context!),
         'endDate': JsonConverters.toJson(endDate, 'DateTime', context!),
         'treatmentId': treatmentId,
@@ -2127,8 +1990,7 @@ class CreateSchedules
         'treatmentUserId': treatmentUserId,
         'lastRunTime': JsonConverters.toJson(lastRunTime, 'DateTime', context!),
         'lastRunStatus': lastRunStatus,
-        'nextRunDateTime':
-            JsonConverters.toJson(nextRunDateTime, 'DateTime', context!)
+        'nextRunDateTime': JsonConverters.toJson(nextRunDateTime, 'DateTime', context!)
       };
 
   createResponse() => IdResponse();
@@ -2140,26 +2002,20 @@ class CreateSchedules
 // @Route("/treatmentremindersounds", "POST")
 @CopyWith()
 class CreateTreatmentReminderSounds
-    implements
-        IReturn<IdResponse>,
-        IPost,
-        ICreateDb<TreatmentReminderSounds>,
-        IConvertible {
+    implements IReturn<IdResponse>, IPost, ICreateDb<TreatmentReminderSounds>, IConvertible {
   String? id;
   DateTime? createdAt;
   String? name;
   String? description;
 
-  CreateTreatmentReminderSounds(
-      {this.id, this.createdAt, this.name, this.description});
+  CreateTreatmentReminderSounds({this.id, this.createdAt, this.name, this.description});
   CreateTreatmentReminderSounds.fromJson(Map<String, dynamic> json) {
     fromMap(json);
   }
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
     name = json['name'];
     description = json['description'];
     return this;
@@ -2180,8 +2036,7 @@ class CreateTreatmentReminderSounds
 
 // @Route("/treatments", "POST")
 @CopyWith()
-class CreateTreatments
-    implements IReturn<IdResponse>, IPost, ICreateDb<Treatments>, IConvertible {
+class CreateTreatments implements IReturn<IdResponse>, IPost, ICreateDb<Treatments>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -2220,12 +2075,9 @@ class CreateTreatments
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
     name = json['name'];
     description = json['description'];
     treatmentType = json['treatmentType'];
@@ -2267,11 +2119,7 @@ class CreateTreatments
 // @Route("/treatmentscheduledevents", "POST")
 @CopyWith()
 class CreateTreatmentScheduledEvents
-    implements
-        IReturn<IdResponse>,
-        IPost,
-        ICreateDb<TreatmentScheduledEvents>,
-        IConvertible {
+    implements IReturn<IdResponse>, IPost, ICreateDb<TreatmentScheduledEvents>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -2328,12 +2176,9 @@ class CreateTreatmentScheduledEvents
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
     mood = json['mood'];
     scheduleId = json['scheduleId'];
     treatmentId = json['treatmentId'];
@@ -2350,12 +2195,9 @@ class CreateTreatmentScheduledEvents
     unitsTaken = json['unitsTaken'];
     unitTypesId = json['unitTypesId'];
     unitsTypeName = json['unitsTypeName'];
-    dateTimeEventPlanned = JsonConverters.fromJson(
-        json['dateTimeEventPlanned'], 'DateTime', context!);
-    dateTimeUserConfirmedEvent = JsonConverters.fromJson(
-        json['dateTimeUserConfirmedEvent'], 'DateTime', context!);
-    dateTimeSkippedEvent = JsonConverters.fromJson(
-        json['dateTimeSkippedEvent'], 'DateTime', context!);
+    dateTimeEventPlanned = JsonConverters.fromJson(json['dateTimeEventPlanned'], 'DateTime', context!);
+    dateTimeUserConfirmedEvent = JsonConverters.fromJson(json['dateTimeUserConfirmedEvent'], 'DateTime', context!);
+    dateTimeSkippedEvent = JsonConverters.fromJson(json['dateTimeSkippedEvent'], 'DateTime', context!);
     customerNotes = json['customerNotes'];
     return this;
   }
@@ -2381,12 +2223,9 @@ class CreateTreatmentScheduledEvents
         'unitsTaken': unitsTaken,
         'unitTypesId': unitTypesId,
         'unitsTypeName': unitsTypeName,
-        'dateTimeEventPlanned':
-            JsonConverters.toJson(dateTimeEventPlanned, 'DateTime', context!),
-        'dateTimeUserConfirmedEvent': JsonConverters.toJson(
-            dateTimeUserConfirmedEvent, 'DateTime', context!),
-        'dateTimeSkippedEvent':
-            JsonConverters.toJson(dateTimeSkippedEvent, 'DateTime', context!),
+        'dateTimeEventPlanned': JsonConverters.toJson(dateTimeEventPlanned, 'DateTime', context!),
+        'dateTimeUserConfirmedEvent': JsonConverters.toJson(dateTimeUserConfirmedEvent, 'DateTime', context!),
+        'dateTimeSkippedEvent': JsonConverters.toJson(dateTimeSkippedEvent, 'DateTime', context!),
         'customerNotes': customerNotes
       };
 
@@ -2398,12 +2237,7 @@ class CreateTreatmentScheduledEvents
 
 // @Route("/userauthdetails", "POST")
 @CopyWith()
-class CreateUserAuthDetails
-    implements
-        IReturn<IdResponse>,
-        IPost,
-        ICreateDb<UserAuthDetails>,
-        IConvertible {
+class CreateUserAuthDetails implements IReturn<IdResponse>, IPost, ICreateDb<UserAuthDetails>, IConvertible {
   int? userAuthId;
   String? provider;
   String? userId;
@@ -2496,8 +2330,7 @@ class CreateUserAuthDetails
     company = json['company'];
     email = json['email'];
     phoneNumber = json['phoneNumber'];
-    birthDate =
-        JsonConverters.fromJson(json['birthDate'], 'DateTime', context!);
+    birthDate = JsonConverters.fromJson(json['birthDate'], 'DateTime', context!);
     birthDateRaw = json['birthDateRaw'];
     address = json['address'];
     address2 = json['address2'];
@@ -2512,17 +2345,14 @@ class CreateUserAuthDetails
     postalCode = json['postalCode'];
     timeZone = json['timeZone'];
     refreshToken = json['refreshToken'];
-    refreshTokenExpiry = JsonConverters.fromJson(
-        json['refreshTokenExpiry'], 'DateTime', context!);
+    refreshTokenExpiry = JsonConverters.fromJson(json['refreshTokenExpiry'], 'DateTime', context!);
     requestToken = json['requestToken'];
     requestTokenSecret = json['requestTokenSecret'];
     items = json['items'];
     accessToken = json['accessToken'];
     accessTokenSecret = json['accessTokenSecret'];
-    createdDate =
-        JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
-    modifiedDate =
-        JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
+    createdDate = JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
+    modifiedDate = JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
     refId = json['refId'];
     refIdStr = json['refIdStr'];
     meta = json['meta'];
@@ -2556,16 +2386,14 @@ class CreateUserAuthDetails
         'postalCode': postalCode,
         'timeZone': timeZone,
         'refreshToken': refreshToken,
-        'refreshTokenExpiry':
-            JsonConverters.toJson(refreshTokenExpiry, 'DateTime', context!),
+        'refreshTokenExpiry': JsonConverters.toJson(refreshTokenExpiry, 'DateTime', context!),
         'requestToken': requestToken,
         'requestTokenSecret': requestTokenSecret,
         'items': items,
         'accessToken': accessToken,
         'accessTokenSecret': accessTokenSecret,
         'createdDate': JsonConverters.toJson(createdDate, 'DateTime', context!),
-        'modifiedDate':
-            JsonConverters.toJson(modifiedDate, 'DateTime', context!),
+        'modifiedDate': JsonConverters.toJson(modifiedDate, 'DateTime', context!),
         'refId': refId,
         'refIdStr': refIdStr,
         'meta': meta
@@ -2579,12 +2407,7 @@ class CreateUserAuthDetails
 
 // @Route("/userauthroles", "POST")
 @CopyWith()
-class CreateUserAuthRole
-    implements
-        IReturn<IdResponse>,
-        IPost,
-        ICreateDb<UserAuthRole>,
-        IConvertible {
+class CreateUserAuthRole implements IReturn<IdResponse>, IPost, ICreateDb<UserAuthRole>, IConvertible {
   int? userAuthId;
   String? role;
   String? permission;
@@ -2611,10 +2434,8 @@ class CreateUserAuthRole
     userAuthId = json['userAuthId'];
     role = json['role'];
     permission = json['permission'];
-    createdDate =
-        JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
-    modifiedDate =
-        JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
+    createdDate = JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
+    modifiedDate = JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
     refId = json['refId'];
     refIdStr = json['refIdStr'];
     meta = json['meta'];
@@ -2626,8 +2447,7 @@ class CreateUserAuthRole
         'role': role,
         'permission': permission,
         'createdDate': JsonConverters.toJson(createdDate, 'DateTime', context!),
-        'modifiedDate':
-            JsonConverters.toJson(modifiedDate, 'DateTime', context!),
+        'modifiedDate': JsonConverters.toJson(modifiedDate, 'DateTime', context!),
         'refId': refId,
         'refIdStr': refIdStr,
         'meta': meta
@@ -2641,12 +2461,7 @@ class CreateUserAuthRole
 
 // @Route("/appointments/{Id}", "DELETE")
 @CopyWith()
-class DeleteAppointments
-    implements
-        IReturn<IdResponse>,
-        IDelete,
-        IDeleteDb<Appointments>,
-        IConvertible {
+class DeleteAppointments implements IReturn<IdResponse>, IDelete, IDeleteDb<Appointments>, IConvertible {
   String? id;
 
   DeleteAppointments({this.id});
@@ -2669,8 +2484,7 @@ class DeleteAppointments
 
 // @Route("/appusers/{Id}", "DELETE")
 @CopyWith()
-class DeleteAppUser
-    implements IReturn<IdResponse>, IDelete, IDeleteDb<AppUser>, IConvertible {
+class DeleteAppUser implements IReturn<IdResponse>, IDelete, IDeleteDb<AppUser>, IConvertible {
   int? id;
 
   DeleteAppUser({this.id});
@@ -2693,12 +2507,7 @@ class DeleteAppUser
 
 // @Route("/crudevents/{Id}", "DELETE")
 @CopyWith()
-class DeleteCrudEvent
-    implements
-        IReturn<IdResponse>,
-        IDelete,
-        IDeleteDb<CrudEvent>,
-        IConvertible {
+class DeleteCrudEvent implements IReturn<IdResponse>, IDelete, IDeleteDb<CrudEvent>, IConvertible {
   int? id;
 
   DeleteCrudEvent({this.id});
@@ -2721,12 +2530,7 @@ class DeleteCrudEvent
 
 // @Route("/measurementdetails/{Id}", "DELETE")
 @CopyWith()
-class DeleteMeasurementDetails
-    implements
-        IReturn<IdResponse>,
-        IDelete,
-        IDeleteDb<MeasurementDetails>,
-        IConvertible {
+class DeleteMeasurementDetails implements IReturn<IdResponse>, IDelete, IDeleteDb<MeasurementDetails>, IConvertible {
   String? id;
 
   DeleteMeasurementDetails({this.id});
@@ -2749,12 +2553,7 @@ class DeleteMeasurementDetails
 
 // @Route("/measurements/{Id}", "DELETE")
 @CopyWith()
-class DeleteMeasurements
-    implements
-        IReturn<IdResponse>,
-        IDelete,
-        IDeleteDb<Measurements>,
-        IConvertible {
+class DeleteMeasurements implements IReturn<IdResponse>, IDelete, IDeleteDb<Measurements>, IConvertible {
   String? id;
 
   DeleteMeasurements({this.id});
@@ -2777,12 +2576,7 @@ class DeleteMeasurements
 
 // @Route("/measurementtypes/{Id}", "DELETE")
 @CopyWith()
-class DeleteMeasurementTypes
-    implements
-        IReturn<IdResponse>,
-        IDelete,
-        IDeleteDb<MeasurementTypes>,
-        IConvertible {
+class DeleteMeasurementTypes implements IReturn<IdResponse>, IDelete, IDeleteDb<MeasurementTypes>, IConvertible {
   String? id;
 
   DeleteMeasurementTypes({this.id});
@@ -2805,12 +2599,7 @@ class DeleteMeasurementTypes
 
 // @Route("/schedules/{Id}", "DELETE")
 @CopyWith()
-class DeleteSchedules
-    implements
-        IReturn<IdResponse>,
-        IDelete,
-        IDeleteDb<Schedules>,
-        IConvertible {
+class DeleteSchedules implements IReturn<IdResponse>, IDelete, IDeleteDb<Schedules>, IConvertible {
   String? id;
 
   DeleteSchedules({this.id});
@@ -2834,11 +2623,7 @@ class DeleteSchedules
 // @Route("/treatmentremindersounds/{Id}", "DELETE")
 @CopyWith()
 class DeleteTreatmentReminderSounds
-    implements
-        IReturn<IdResponse>,
-        IDelete,
-        IDeleteDb<TreatmentReminderSounds>,
-        IConvertible {
+    implements IReturn<IdResponse>, IDelete, IDeleteDb<TreatmentReminderSounds>, IConvertible {
   String? id;
 
   DeleteTreatmentReminderSounds({this.id});
@@ -2861,12 +2646,7 @@ class DeleteTreatmentReminderSounds
 
 // @Route("/treatments/{Id}", "DELETE")
 @CopyWith()
-class DeleteTreatments
-    implements
-        IReturn<IdResponse>,
-        IDelete,
-        IDeleteDb<Treatments>,
-        IConvertible {
+class DeleteTreatments implements IReturn<IdResponse>, IDelete, IDeleteDb<Treatments>, IConvertible {
   String? id;
 
   DeleteTreatments({this.id});
@@ -2890,11 +2670,7 @@ class DeleteTreatments
 // @Route("/treatmentscheduledevents/{Id}", "DELETE")
 @CopyWith()
 class DeleteTreatmentScheduledEvents
-    implements
-        IReturn<IdResponse>,
-        IDelete,
-        IDeleteDb<TreatmentScheduledEvents>,
-        IConvertible {
+    implements IReturn<IdResponse>, IDelete, IDeleteDb<TreatmentScheduledEvents>, IConvertible {
   String? id;
 
   DeleteTreatmentScheduledEvents({this.id});
@@ -2917,12 +2693,7 @@ class DeleteTreatmentScheduledEvents
 
 // @Route("/userauthdetails/{Id}", "DELETE")
 @CopyWith()
-class DeleteUserAuthDetails
-    implements
-        IReturn<IdResponse>,
-        IDelete,
-        IDeleteDb<UserAuthDetails>,
-        IConvertible {
+class DeleteUserAuthDetails implements IReturn<IdResponse>, IDelete, IDeleteDb<UserAuthDetails>, IConvertible {
   int? id;
 
   DeleteUserAuthDetails({this.id});
@@ -2944,12 +2715,7 @@ class DeleteUserAuthDetails
 }
 
 // @Route("/userauthroles/{Id}", "DELETE")
-class DeleteUserAuthRole
-    implements
-        IReturn<IdResponse>,
-        IDelete,
-        IDeleteDb<UserAuthRole>,
-        IConvertible {
+class DeleteUserAuthRole implements IReturn<IdResponse>, IDelete, IDeleteDb<UserAuthRole>, IConvertible {
   int? id;
 
   DeleteUserAuthRole({this.id});
@@ -2971,12 +2737,7 @@ class DeleteUserAuthRole
 }
 
 // @Route("/appointments/{Id}", "PATCH")
-class PatchAppointments
-    implements
-        IReturn<IdResponse>,
-        IPatch,
-        IPatchDb<Appointments>,
-        IConvertible {
+class PatchAppointments implements IReturn<IdResponse>, IPatch, IPatchDb<Appointments>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -3003,14 +2764,10 @@ class PatchAppointments
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
-    apptDateTime =
-        JsonConverters.fromJson(json['apptDateTime'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    apptDateTime = JsonConverters.fromJson(json['apptDateTime'], 'DateTime', context!);
     place = json['place'];
     placeNotes = json['placeNotes'];
     providerName = json['providerName'];
@@ -3023,8 +2780,7 @@ class PatchAppointments
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
         'updatedAt': JsonConverters.toJson(updatedAt, 'DateTime', context!),
         'deletedAt': JsonConverters.toJson(deletedAt, 'DateTime', context!),
-        'apptDateTime':
-            JsonConverters.toJson(apptDateTime, 'DateTime', context!),
+        'apptDateTime': JsonConverters.toJson(apptDateTime, 'DateTime', context!),
         'place': place,
         'placeNotes': placeNotes,
         'providerName': providerName,
@@ -3038,8 +2794,7 @@ class PatchAppointments
 }
 
 // @Route("/appusers/{Id}", "PATCH")
-class PatchAppUser
-    implements IReturn<IdResponse>, IPatch, IPatchDb<AppUser>, IConvertible {
+class PatchAppUser implements IReturn<IdResponse>, IPatch, IPatchDb<AppUser>, IConvertible {
   String? profileUrl;
   String? lastLoginIp;
   DateTime? lastLoginDate;
@@ -3133,8 +2888,7 @@ class PatchAppUser
   fromMap(Map<String, dynamic> json) {
     profileUrl = json['profileUrl'];
     lastLoginIp = json['lastLoginIp'];
-    lastLoginDate =
-        JsonConverters.fromJson(json['lastLoginDate'], 'DateTime', context!);
+    lastLoginDate = JsonConverters.fromJson(json['lastLoginDate'], 'DateTime', context!);
     id = json['id'];
     userName = json['userName'];
     email = json['email'];
@@ -3144,8 +2898,7 @@ class PatchAppUser
     lastName = json['lastName'];
     displayName = json['displayName'];
     company = json['company'];
-    birthDate =
-        JsonConverters.fromJson(json['birthDate'], 'DateTime', context!);
+    birthDate = JsonConverters.fromJson(json['birthDate'], 'DateTime', context!);
     birthDateRaw = json['birthDateRaw'];
     address = json['address'];
     address2 = json['address2'];
@@ -3165,15 +2918,11 @@ class PatchAppUser
     digestHa1Hash = json['digestHa1Hash'];
     roles = json['roles'];
     permissions = json['permissions'];
-    createdDate =
-        JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
-    modifiedDate =
-        JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
+    createdDate = JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
+    modifiedDate = JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
     invalidLoginAttempts = json['invalidLoginAttempts'];
-    lastLoginAttempt =
-        JsonConverters.fromJson(json['lastLoginAttempt'], 'DateTime', context!);
-    lockedDate =
-        JsonConverters.fromJson(json['lockedDate'], 'DateTime', context!);
+    lastLoginAttempt = JsonConverters.fromJson(json['lastLoginAttempt'], 'DateTime', context!);
+    lockedDate = JsonConverters.fromJson(json['lockedDate'], 'DateTime', context!);
     recoveryToken = json['recoveryToken'];
     refId = json['refId'];
     refIdStr = json['refIdStr'];
@@ -3185,8 +2934,7 @@ class PatchAppUser
   Map<String, dynamic> toJson() => {
         'profileUrl': profileUrl,
         'lastLoginIp': lastLoginIp,
-        'lastLoginDate':
-            JsonConverters.toJson(lastLoginDate, 'DateTime', context!),
+        'lastLoginDate': JsonConverters.toJson(lastLoginDate, 'DateTime', context!),
         'id': id,
         'userName': userName,
         'email': email,
@@ -3217,11 +2965,9 @@ class PatchAppUser
         'roles': roles,
         'permissions': permissions,
         'createdDate': JsonConverters.toJson(createdDate, 'DateTime', context!),
-        'modifiedDate':
-            JsonConverters.toJson(modifiedDate, 'DateTime', context!),
+        'modifiedDate': JsonConverters.toJson(modifiedDate, 'DateTime', context!),
         'invalidLoginAttempts': invalidLoginAttempts,
-        'lastLoginAttempt':
-            JsonConverters.toJson(lastLoginAttempt, 'DateTime', context!),
+        'lastLoginAttempt': JsonConverters.toJson(lastLoginAttempt, 'DateTime', context!),
         'lockedDate': JsonConverters.toJson(lockedDate, 'DateTime', context!),
         'recoveryToken': recoveryToken,
         'refId': refId,
@@ -3238,8 +2984,7 @@ class PatchAppUser
 
 // @Route("/crudevents/{Id}", "PATCH")
 
-class PatchCrudEvent
-    implements IReturn<IdResponse>, IPatch, IPatchDb<CrudEvent>, IConvertible {
+class PatchCrudEvent implements IReturn<IdResponse>, IPatch, IPatchDb<CrudEvent>, IConvertible {
   int? id;
   String? eventType;
   String? model;
@@ -3281,8 +3026,7 @@ class PatchCrudEvent
     eventType = json['eventType'];
     model = json['model'];
     modelId = json['modelId'];
-    eventDate =
-        JsonConverters.fromJson(json['eventDate'], 'DateTime', context!);
+    eventDate = JsonConverters.fromJson(json['eventDate'], 'DateTime', context!);
     rowsUpdated = json['rowsUpdated'];
     requestType = json['requestType'];
     requestBody = json['requestBody'];
@@ -3322,12 +3066,7 @@ class PatchCrudEvent
 
 // @Route("/measurementdetails/{Id}", "PATCH")
 
-class PatchMeasurementDetails
-    implements
-        IReturn<IdResponse>,
-        IPatch,
-        IPatchDb<MeasurementDetails>,
-        IConvertible {
+class PatchMeasurementDetails implements IReturn<IdResponse>, IPatch, IPatchDb<MeasurementDetails>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -3358,12 +3097,9 @@ class PatchMeasurementDetails
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
     treatmentId = json['treatmentId'];
     treatmentName = json['treatmentName'];
     measurementTypeId = json['measurementTypeId'];
@@ -3396,12 +3132,7 @@ class PatchMeasurementDetails
 
 // @Route("/measurements/{Id}", "PATCH")
 
-class PatchMeasurements
-    implements
-        IReturn<IdResponse>,
-        IPatch,
-        IPatchDb<Measurements>,
-        IConvertible {
+class PatchMeasurements implements IReturn<IdResponse>, IPatch, IPatchDb<Measurements>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -3426,12 +3157,9 @@ class PatchMeasurements
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
     name = json['name'];
     description = json['description'];
     treatmentId = json['treatmentId'];
@@ -3458,12 +3186,7 @@ class PatchMeasurements
 
 // @Route("/measurementtypes/{Id}", "PATCH")
 
-class PatchMeasurementTypes
-    implements
-        IReturn<IdResponse>,
-        IPatch,
-        IPatchDb<MeasurementTypes>,
-        IConvertible {
+class PatchMeasurementTypes implements IReturn<IdResponse>, IPatch, IPatchDb<MeasurementTypes>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -3473,25 +3196,16 @@ class PatchMeasurementTypes
   String? treatmentTypeId;
 
   PatchMeasurementTypes(
-      {this.id,
-      this.createdAt,
-      this.updatedAt,
-      this.deletedAt,
-      this.name,
-      this.description,
-      this.treatmentTypeId});
+      {this.id, this.createdAt, this.updatedAt, this.deletedAt, this.name, this.description, this.treatmentTypeId});
   PatchMeasurementTypes.fromJson(Map<String, dynamic> json) {
     fromMap(json);
   }
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
     name = json['name'];
     description = json['description'];
     treatmentTypeId = json['treatmentTypeId'];
@@ -3516,8 +3230,7 @@ class PatchMeasurementTypes
 
 // @Route("/schedules/{Id}", "PATCH")
 
-class PatchSchedules
-    implements IReturn<IdResponse>, IPatch, IPatchDb<Schedules>, IConvertible {
+class PatchSchedules implements IReturn<IdResponse>, IPatch, IPatchDb<Schedules>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -3556,27 +3269,20 @@ class PatchSchedules
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
-    scheduleTime =
-        JsonConverters.fromJson(json['scheduleTime'], 'DateTime', context!);
-    startDate =
-        JsonConverters.fromJson(json['startDate'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    scheduleTime = JsonConverters.fromJson(json['scheduleTime'], 'DateTime', context!);
+    startDate = JsonConverters.fromJson(json['startDate'], 'DateTime', context!);
     endDate = JsonConverters.fromJson(json['endDate'], 'DateTime', context!);
     treatmentId = json['treatmentId'];
     treatmentName = json['treatmentName'];
     isWeekendDifferent = json['isWeekendDifferent'];
     appointmentId = json['appointmentId'];
     treatmentUserId = json['treatmentUserId'];
-    lastRunTime =
-        JsonConverters.fromJson(json['lastRunTime'], 'DateTime', context!);
+    lastRunTime = JsonConverters.fromJson(json['lastRunTime'], 'DateTime', context!);
     lastRunStatus = json['lastRunStatus'];
-    nextRunDateTime =
-        JsonConverters.fromJson(json['nextRunDateTime'], 'DateTime', context!);
+    nextRunDateTime = JsonConverters.fromJson(json['nextRunDateTime'], 'DateTime', context!);
     return this;
   }
 
@@ -3585,8 +3291,7 @@ class PatchSchedules
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
         'updatedAt': JsonConverters.toJson(updatedAt, 'DateTime', context!),
         'deletedAt': JsonConverters.toJson(deletedAt, 'DateTime', context!),
-        'scheduleTime':
-            JsonConverters.toJson(scheduleTime, 'DateTime', context!),
+        'scheduleTime': JsonConverters.toJson(scheduleTime, 'DateTime', context!),
         'startDate': JsonConverters.toJson(startDate, 'DateTime', context!),
         'endDate': JsonConverters.toJson(endDate, 'DateTime', context!),
         'treatmentId': treatmentId,
@@ -3596,8 +3301,7 @@ class PatchSchedules
         'treatmentUserId': treatmentUserId,
         'lastRunTime': JsonConverters.toJson(lastRunTime, 'DateTime', context!),
         'lastRunStatus': lastRunStatus,
-        'nextRunDateTime':
-            JsonConverters.toJson(nextRunDateTime, 'DateTime', context!)
+        'nextRunDateTime': JsonConverters.toJson(nextRunDateTime, 'DateTime', context!)
       };
 
   createResponse() => IdResponse();
@@ -3609,26 +3313,20 @@ class PatchSchedules
 // @Route("/treatmentremindersounds/{Id}", "PATCH")
 
 class PatchTreatmentReminderSounds
-    implements
-        IReturn<IdResponse>,
-        IPatch,
-        IPatchDb<TreatmentReminderSounds>,
-        IConvertible {
+    implements IReturn<IdResponse>, IPatch, IPatchDb<TreatmentReminderSounds>, IConvertible {
   String? id;
   DateTime? createdAt;
   String? name;
   String? description;
 
-  PatchTreatmentReminderSounds(
-      {this.id, this.createdAt, this.name, this.description});
+  PatchTreatmentReminderSounds({this.id, this.createdAt, this.name, this.description});
   PatchTreatmentReminderSounds.fromJson(Map<String, dynamic> json) {
     fromMap(json);
   }
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
     name = json['name'];
     description = json['description'];
     return this;
@@ -3649,8 +3347,7 @@ class PatchTreatmentReminderSounds
 
 // @Route("/treatments/{Id}", "PATCH")
 
-class PatchTreatments
-    implements IReturn<IdResponse>, IPatch, IPatchDb<Treatments>, IConvertible {
+class PatchTreatments implements IReturn<IdResponse>, IPatch, IPatchDb<Treatments>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -3689,12 +3386,9 @@ class PatchTreatments
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
     name = json['name'];
     description = json['description'];
     treatmentType = json['treatmentType'];
@@ -3736,11 +3430,7 @@ class PatchTreatments
 // @Route("/treatmentscheduledevents/{Id}", "PATCH")
 
 class PatchTreatmentScheduledEvents
-    implements
-        IReturn<IdResponse>,
-        IPatch,
-        IPatchDb<TreatmentScheduledEvents>,
-        IConvertible {
+    implements IReturn<IdResponse>, IPatch, IPatchDb<TreatmentScheduledEvents>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -3797,12 +3487,9 @@ class PatchTreatmentScheduledEvents
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
     mood = json['mood'];
     scheduleId = json['scheduleId'];
     treatmentId = json['treatmentId'];
@@ -3819,12 +3506,9 @@ class PatchTreatmentScheduledEvents
     unitsTaken = json['unitsTaken'];
     unitTypesId = json['unitTypesId'];
     unitsTypeName = json['unitsTypeName'];
-    dateTimeEventPlanned = JsonConverters.fromJson(
-        json['dateTimeEventPlanned'], 'DateTime', context!);
-    dateTimeUserConfirmedEvent = JsonConverters.fromJson(
-        json['dateTimeUserConfirmedEvent'], 'DateTime', context!);
-    dateTimeSkippedEvent = JsonConverters.fromJson(
-        json['dateTimeSkippedEvent'], 'DateTime', context!);
+    dateTimeEventPlanned = JsonConverters.fromJson(json['dateTimeEventPlanned'], 'DateTime', context!);
+    dateTimeUserConfirmedEvent = JsonConverters.fromJson(json['dateTimeUserConfirmedEvent'], 'DateTime', context!);
+    dateTimeSkippedEvent = JsonConverters.fromJson(json['dateTimeSkippedEvent'], 'DateTime', context!);
     customerNotes = json['customerNotes'];
     return this;
   }
@@ -3850,12 +3534,9 @@ class PatchTreatmentScheduledEvents
         'unitsTaken': unitsTaken,
         'unitTypesId': unitTypesId,
         'unitsTypeName': unitsTypeName,
-        'dateTimeEventPlanned':
-            JsonConverters.toJson(dateTimeEventPlanned, 'DateTime', context!),
-        'dateTimeUserConfirmedEvent': JsonConverters.toJson(
-            dateTimeUserConfirmedEvent, 'DateTime', context!),
-        'dateTimeSkippedEvent':
-            JsonConverters.toJson(dateTimeSkippedEvent, 'DateTime', context!),
+        'dateTimeEventPlanned': JsonConverters.toJson(dateTimeEventPlanned, 'DateTime', context!),
+        'dateTimeUserConfirmedEvent': JsonConverters.toJson(dateTimeUserConfirmedEvent, 'DateTime', context!),
+        'dateTimeSkippedEvent': JsonConverters.toJson(dateTimeSkippedEvent, 'DateTime', context!),
         'customerNotes': customerNotes
       };
 
@@ -3867,12 +3548,7 @@ class PatchTreatmentScheduledEvents
 
 // @Route("/userauthdetails/{Id}", "PATCH")
 
-class PatchUserAuthDetails
-    implements
-        IReturn<IdResponse>,
-        IPatch,
-        IPatchDb<UserAuthDetails>,
-        IConvertible {
+class PatchUserAuthDetails implements IReturn<IdResponse>, IPatch, IPatchDb<UserAuthDetails>, IConvertible {
   int? id;
   int? userAuthId;
   String? provider;
@@ -3968,8 +3644,7 @@ class PatchUserAuthDetails
     company = json['company'];
     email = json['email'];
     phoneNumber = json['phoneNumber'];
-    birthDate =
-        JsonConverters.fromJson(json['birthDate'], 'DateTime', context!);
+    birthDate = JsonConverters.fromJson(json['birthDate'], 'DateTime', context!);
     birthDateRaw = json['birthDateRaw'];
     address = json['address'];
     address2 = json['address2'];
@@ -3984,17 +3659,14 @@ class PatchUserAuthDetails
     postalCode = json['postalCode'];
     timeZone = json['timeZone'];
     refreshToken = json['refreshToken'];
-    refreshTokenExpiry = JsonConverters.fromJson(
-        json['refreshTokenExpiry'], 'DateTime', context!);
+    refreshTokenExpiry = JsonConverters.fromJson(json['refreshTokenExpiry'], 'DateTime', context!);
     requestToken = json['requestToken'];
     requestTokenSecret = json['requestTokenSecret'];
     items = json['items'];
     accessToken = json['accessToken'];
     accessTokenSecret = json['accessTokenSecret'];
-    createdDate =
-        JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
-    modifiedDate =
-        JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
+    createdDate = JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
+    modifiedDate = JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
     refId = json['refId'];
     refIdStr = json['refIdStr'];
     meta = json['meta'];
@@ -4029,16 +3701,14 @@ class PatchUserAuthDetails
         'postalCode': postalCode,
         'timeZone': timeZone,
         'refreshToken': refreshToken,
-        'refreshTokenExpiry':
-            JsonConverters.toJson(refreshTokenExpiry, 'DateTime', context!),
+        'refreshTokenExpiry': JsonConverters.toJson(refreshTokenExpiry, 'DateTime', context!),
         'requestToken': requestToken,
         'requestTokenSecret': requestTokenSecret,
         'items': items,
         'accessToken': accessToken,
         'accessTokenSecret': accessTokenSecret,
         'createdDate': JsonConverters.toJson(createdDate, 'DateTime', context!),
-        'modifiedDate':
-            JsonConverters.toJson(modifiedDate, 'DateTime', context!),
+        'modifiedDate': JsonConverters.toJson(modifiedDate, 'DateTime', context!),
         'refId': refId,
         'refIdStr': refIdStr,
         'meta': meta
@@ -4052,12 +3722,7 @@ class PatchUserAuthDetails
 
 // @Route("/userauthroles/{Id}", "PATCH")
 
-class PatchUserAuthRole
-    implements
-        IReturn<IdResponse>,
-        IPatch,
-        IPatchDb<UserAuthRole>,
-        IConvertible {
+class PatchUserAuthRole implements IReturn<IdResponse>, IPatch, IPatchDb<UserAuthRole>, IConvertible {
   int? id;
   int? userAuthId;
   String? role;
@@ -4087,10 +3752,8 @@ class PatchUserAuthRole
     userAuthId = json['userAuthId'];
     role = json['role'];
     permission = json['permission'];
-    createdDate =
-        JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
-    modifiedDate =
-        JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
+    createdDate = JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
+    modifiedDate = JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
     refId = json['refId'];
     refIdStr = json['refIdStr'];
     meta = json['meta'];
@@ -4103,8 +3766,7 @@ class PatchUserAuthRole
         'role': role,
         'permission': permission,
         'createdDate': JsonConverters.toJson(createdDate, 'DateTime', context!),
-        'modifiedDate':
-            JsonConverters.toJson(modifiedDate, 'DateTime', context!),
+        'modifiedDate': JsonConverters.toJson(modifiedDate, 'DateTime', context!),
         'refId': refId,
         'refIdStr': refIdStr,
         'meta': meta
@@ -4118,12 +3780,7 @@ class PatchUserAuthRole
 
 // @Route("/appointments/{Id}", "PUT")
 
-class UpdateAppointments
-    implements
-        IReturn<IdResponse>,
-        IPut,
-        IUpdateDb<Appointments>,
-        IConvertible {
+class UpdateAppointments implements IReturn<IdResponse>, IPut, IUpdateDb<Appointments>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -4150,14 +3807,10 @@ class UpdateAppointments
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
-    apptDateTime =
-        JsonConverters.fromJson(json['apptDateTime'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    apptDateTime = JsonConverters.fromJson(json['apptDateTime'], 'DateTime', context!);
     place = json['place'];
     placeNotes = json['placeNotes'];
     providerName = json['providerName'];
@@ -4170,8 +3823,7 @@ class UpdateAppointments
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
         'updatedAt': JsonConverters.toJson(updatedAt, 'DateTime', context!),
         'deletedAt': JsonConverters.toJson(deletedAt, 'DateTime', context!),
-        'apptDateTime':
-            JsonConverters.toJson(apptDateTime, 'DateTime', context!),
+        'apptDateTime': JsonConverters.toJson(apptDateTime, 'DateTime', context!),
         'place': place,
         'placeNotes': placeNotes,
         'providerName': providerName,
@@ -4186,8 +3838,7 @@ class UpdateAppointments
 
 // @Route("/appusers/{Id}", "PUT")
 
-class UpdateAppUser
-    implements IReturn<IdResponse>, IPut, IUpdateDb<AppUser>, IConvertible {
+class UpdateAppUser implements IReturn<IdResponse>, IPut, IUpdateDb<AppUser>, IConvertible {
   String? profileUrl;
   String? lastLoginIp;
   DateTime? lastLoginDate;
@@ -4281,8 +3932,7 @@ class UpdateAppUser
   fromMap(Map<String, dynamic> json) {
     profileUrl = json['profileUrl'];
     lastLoginIp = json['lastLoginIp'];
-    lastLoginDate =
-        JsonConverters.fromJson(json['lastLoginDate'], 'DateTime', context!);
+    lastLoginDate = JsonConverters.fromJson(json['lastLoginDate'], 'DateTime', context!);
     id = json['id'];
     userName = json['userName'];
     email = json['email'];
@@ -4292,8 +3942,7 @@ class UpdateAppUser
     lastName = json['lastName'];
     displayName = json['displayName'];
     company = json['company'];
-    birthDate =
-        JsonConverters.fromJson(json['birthDate'], 'DateTime', context!);
+    birthDate = JsonConverters.fromJson(json['birthDate'], 'DateTime', context!);
     birthDateRaw = json['birthDateRaw'];
     address = json['address'];
     address2 = json['address2'];
@@ -4313,15 +3962,11 @@ class UpdateAppUser
     digestHa1Hash = json['digestHa1Hash'];
     roles = json['roles'];
     permissions = json['permissions'];
-    createdDate =
-        JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
-    modifiedDate =
-        JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
+    createdDate = JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
+    modifiedDate = JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
     invalidLoginAttempts = json['invalidLoginAttempts'];
-    lastLoginAttempt =
-        JsonConverters.fromJson(json['lastLoginAttempt'], 'DateTime', context!);
-    lockedDate =
-        JsonConverters.fromJson(json['lockedDate'], 'DateTime', context!);
+    lastLoginAttempt = JsonConverters.fromJson(json['lastLoginAttempt'], 'DateTime', context!);
+    lockedDate = JsonConverters.fromJson(json['lockedDate'], 'DateTime', context!);
     recoveryToken = json['recoveryToken'];
     refId = json['refId'];
     refIdStr = json['refIdStr'];
@@ -4333,8 +3978,7 @@ class UpdateAppUser
   Map<String, dynamic> toJson() => {
         'profileUrl': profileUrl,
         'lastLoginIp': lastLoginIp,
-        'lastLoginDate':
-            JsonConverters.toJson(lastLoginDate, 'DateTime', context!),
+        'lastLoginDate': JsonConverters.toJson(lastLoginDate, 'DateTime', context!),
         'id': id,
         'userName': userName,
         'email': email,
@@ -4365,11 +4009,9 @@ class UpdateAppUser
         'roles': roles,
         'permissions': permissions,
         'createdDate': JsonConverters.toJson(createdDate, 'DateTime', context!),
-        'modifiedDate':
-            JsonConverters.toJson(modifiedDate, 'DateTime', context!),
+        'modifiedDate': JsonConverters.toJson(modifiedDate, 'DateTime', context!),
         'invalidLoginAttempts': invalidLoginAttempts,
-        'lastLoginAttempt':
-            JsonConverters.toJson(lastLoginAttempt, 'DateTime', context!),
+        'lastLoginAttempt': JsonConverters.toJson(lastLoginAttempt, 'DateTime', context!),
         'lockedDate': JsonConverters.toJson(lockedDate, 'DateTime', context!),
         'recoveryToken': recoveryToken,
         'refId': refId,
@@ -4386,8 +4028,7 @@ class UpdateAppUser
 
 // @Route("/crudevents/{Id}", "PUT")
 
-class UpdateCrudEvent
-    implements IReturn<IdResponse>, IPut, IUpdateDb<CrudEvent>, IConvertible {
+class UpdateCrudEvent implements IReturn<IdResponse>, IPut, IUpdateDb<CrudEvent>, IConvertible {
   int? id;
   String? eventType;
   String? model;
@@ -4429,8 +4070,7 @@ class UpdateCrudEvent
     eventType = json['eventType'];
     model = json['model'];
     modelId = json['modelId'];
-    eventDate =
-        JsonConverters.fromJson(json['eventDate'], 'DateTime', context!);
+    eventDate = JsonConverters.fromJson(json['eventDate'], 'DateTime', context!);
     rowsUpdated = json['rowsUpdated'];
     requestType = json['requestType'];
     requestBody = json['requestBody'];
@@ -4470,12 +4110,7 @@ class UpdateCrudEvent
 
 // @Route("/measurementdetails/{Id}", "PUT")
 
-class UpdateMeasurementDetails
-    implements
-        IReturn<IdResponse>,
-        IPut,
-        IUpdateDb<MeasurementDetails>,
-        IConvertible {
+class UpdateMeasurementDetails implements IReturn<IdResponse>, IPut, IUpdateDb<MeasurementDetails>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -4506,12 +4141,9 @@ class UpdateMeasurementDetails
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
     treatmentId = json['treatmentId'];
     treatmentName = json['treatmentName'];
     measurementTypeId = json['measurementTypeId'];
@@ -4544,12 +4176,7 @@ class UpdateMeasurementDetails
 
 // @Route("/measurements/{Id}", "PUT")
 
-class UpdateMeasurements
-    implements
-        IReturn<IdResponse>,
-        IPut,
-        IUpdateDb<Measurements>,
-        IConvertible {
+class UpdateMeasurements implements IReturn<IdResponse>, IPut, IUpdateDb<Measurements>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -4574,12 +4201,9 @@ class UpdateMeasurements
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
     name = json['name'];
     description = json['description'];
     treatmentId = json['treatmentId'];
@@ -4606,12 +4230,7 @@ class UpdateMeasurements
 
 // @Route("/measurementtypes/{Id}", "PUT")
 
-class UpdateMeasurementTypes
-    implements
-        IReturn<IdResponse>,
-        IPut,
-        IUpdateDb<MeasurementTypes>,
-        IConvertible {
+class UpdateMeasurementTypes implements IReturn<IdResponse>, IPut, IUpdateDb<MeasurementTypes>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -4621,25 +4240,16 @@ class UpdateMeasurementTypes
   String? treatmentTypeId;
 
   UpdateMeasurementTypes(
-      {this.id,
-      this.createdAt,
-      this.updatedAt,
-      this.deletedAt,
-      this.name,
-      this.description,
-      this.treatmentTypeId});
+      {this.id, this.createdAt, this.updatedAt, this.deletedAt, this.name, this.description, this.treatmentTypeId});
   UpdateMeasurementTypes.fromJson(Map<String, dynamic> json) {
     fromMap(json);
   }
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
     name = json['name'];
     description = json['description'];
     treatmentTypeId = json['treatmentTypeId'];
@@ -4664,8 +4274,7 @@ class UpdateMeasurementTypes
 
 // @Route("/schedules/{Id}", "PUT")
 
-class UpdateSchedules
-    implements IReturn<IdResponse>, IPut, IUpdateDb<Schedules>, IConvertible {
+class UpdateSchedules implements IReturn<IdResponse>, IPut, IUpdateDb<Schedules>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -4704,27 +4313,20 @@ class UpdateSchedules
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
-    scheduleTime =
-        JsonConverters.fromJson(json['scheduleTime'], 'DateTime', context!);
-    startDate =
-        JsonConverters.fromJson(json['startDate'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    scheduleTime = JsonConverters.fromJson(json['scheduleTime'], 'DateTime', context!);
+    startDate = JsonConverters.fromJson(json['startDate'], 'DateTime', context!);
     endDate = JsonConverters.fromJson(json['endDate'], 'DateTime', context!);
     treatmentId = json['treatmentId'];
     treatmentName = json['treatmentName'];
     isWeekendDifferent = json['isWeekendDifferent'];
     appointmentId = json['appointmentId'];
     treatmentUserId = json['treatmentUserId'];
-    lastRunTime =
-        JsonConverters.fromJson(json['lastRunTime'], 'DateTime', context!);
+    lastRunTime = JsonConverters.fromJson(json['lastRunTime'], 'DateTime', context!);
     lastRunStatus = json['lastRunStatus'];
-    nextRunDateTime =
-        JsonConverters.fromJson(json['nextRunDateTime'], 'DateTime', context!);
+    nextRunDateTime = JsonConverters.fromJson(json['nextRunDateTime'], 'DateTime', context!);
     return this;
   }
 
@@ -4733,8 +4335,7 @@ class UpdateSchedules
         'createdAt': JsonConverters.toJson(createdAt, 'DateTime', context!),
         'updatedAt': JsonConverters.toJson(updatedAt, 'DateTime', context!),
         'deletedAt': JsonConverters.toJson(deletedAt, 'DateTime', context!),
-        'scheduleTime':
-            JsonConverters.toJson(scheduleTime, 'DateTime', context!),
+        'scheduleTime': JsonConverters.toJson(scheduleTime, 'DateTime', context!),
         'startDate': JsonConverters.toJson(startDate, 'DateTime', context!),
         'endDate': JsonConverters.toJson(endDate, 'DateTime', context!),
         'treatmentId': treatmentId,
@@ -4744,8 +4345,7 @@ class UpdateSchedules
         'treatmentUserId': treatmentUserId,
         'lastRunTime': JsonConverters.toJson(lastRunTime, 'DateTime', context!),
         'lastRunStatus': lastRunStatus,
-        'nextRunDateTime':
-            JsonConverters.toJson(nextRunDateTime, 'DateTime', context!)
+        'nextRunDateTime': JsonConverters.toJson(nextRunDateTime, 'DateTime', context!)
       };
 
   createResponse() => IdResponse();
@@ -4757,26 +4357,20 @@ class UpdateSchedules
 // @Route("/treatmentremindersounds/{Id}", "PUT")
 
 class UpdateTreatmentReminderSounds
-    implements
-        IReturn<IdResponse>,
-        IPut,
-        IUpdateDb<TreatmentReminderSounds>,
-        IConvertible {
+    implements IReturn<IdResponse>, IPut, IUpdateDb<TreatmentReminderSounds>, IConvertible {
   String? id;
   DateTime? createdAt;
   String? name;
   String? description;
 
-  UpdateTreatmentReminderSounds(
-      {this.id, this.createdAt, this.name, this.description});
+  UpdateTreatmentReminderSounds({this.id, this.createdAt, this.name, this.description});
   UpdateTreatmentReminderSounds.fromJson(Map<String, dynamic> json) {
     fromMap(json);
   }
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
     name = json['name'];
     description = json['description'];
     return this;
@@ -4797,8 +4391,7 @@ class UpdateTreatmentReminderSounds
 
 // @Route("/treatments/{Id}", "PUT")
 
-class UpdateTreatments
-    implements IReturn<IdResponse>, IPut, IUpdateDb<Treatments>, IConvertible {
+class UpdateTreatments implements IReturn<IdResponse>, IPut, IUpdateDb<Treatments>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -4837,12 +4430,9 @@ class UpdateTreatments
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
     name = json['name'];
     description = json['description'];
     treatmentType = json['treatmentType'];
@@ -4884,11 +4474,7 @@ class UpdateTreatments
 // @Route("/treatmentscheduledevents/{Id}", "PUT")
 
 class UpdateTreatmentScheduledEvents
-    implements
-        IReturn<IdResponse>,
-        IPut,
-        IUpdateDb<TreatmentScheduledEvents>,
-        IConvertible {
+    implements IReturn<IdResponse>, IPut, IUpdateDb<TreatmentScheduledEvents>, IConvertible {
   String? id;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -4945,12 +4531,9 @@ class UpdateTreatmentScheduledEvents
 
   fromMap(Map<String, dynamic> json) {
     id = json['id'];
-    createdAt =
-        JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
-    updatedAt =
-        JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
-    deletedAt =
-        JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
+    createdAt = JsonConverters.fromJson(json['createdAt'], 'DateTime', context!);
+    updatedAt = JsonConverters.fromJson(json['updatedAt'], 'DateTime', context!);
+    deletedAt = JsonConverters.fromJson(json['deletedAt'], 'DateTime', context!);
     mood = json['mood'];
     scheduleId = json['scheduleId'];
     treatmentId = json['treatmentId'];
@@ -4967,12 +4550,9 @@ class UpdateTreatmentScheduledEvents
     unitsTaken = json['unitsTaken'];
     unitTypesId = json['unitTypesId'];
     unitsTypeName = json['unitsTypeName'];
-    dateTimeEventPlanned = JsonConverters.fromJson(
-        json['dateTimeEventPlanned'], 'DateTime', context!);
-    dateTimeUserConfirmedEvent = JsonConverters.fromJson(
-        json['dateTimeUserConfirmedEvent'], 'DateTime', context!);
-    dateTimeSkippedEvent = JsonConverters.fromJson(
-        json['dateTimeSkippedEvent'], 'DateTime', context!);
+    dateTimeEventPlanned = JsonConverters.fromJson(json['dateTimeEventPlanned'], 'DateTime', context!);
+    dateTimeUserConfirmedEvent = JsonConverters.fromJson(json['dateTimeUserConfirmedEvent'], 'DateTime', context!);
+    dateTimeSkippedEvent = JsonConverters.fromJson(json['dateTimeSkippedEvent'], 'DateTime', context!);
     customerNotes = json['customerNotes'];
     return this;
   }
@@ -4998,12 +4578,9 @@ class UpdateTreatmentScheduledEvents
         'unitsTaken': unitsTaken,
         'unitTypesId': unitTypesId,
         'unitsTypeName': unitsTypeName,
-        'dateTimeEventPlanned':
-            JsonConverters.toJson(dateTimeEventPlanned, 'DateTime', context!),
-        'dateTimeUserConfirmedEvent': JsonConverters.toJson(
-            dateTimeUserConfirmedEvent, 'DateTime', context!),
-        'dateTimeSkippedEvent':
-            JsonConverters.toJson(dateTimeSkippedEvent, 'DateTime', context!),
+        'dateTimeEventPlanned': JsonConverters.toJson(dateTimeEventPlanned, 'DateTime', context!),
+        'dateTimeUserConfirmedEvent': JsonConverters.toJson(dateTimeUserConfirmedEvent, 'DateTime', context!),
+        'dateTimeSkippedEvent': JsonConverters.toJson(dateTimeSkippedEvent, 'DateTime', context!),
         'customerNotes': customerNotes
       };
 
@@ -5015,12 +4592,7 @@ class UpdateTreatmentScheduledEvents
 
 // @Route("/userauthdetails/{Id}", "PUT")
 
-class UpdateUserAuthDetails
-    implements
-        IReturn<IdResponse>,
-        IPut,
-        IUpdateDb<UserAuthDetails>,
-        IConvertible {
+class UpdateUserAuthDetails implements IReturn<IdResponse>, IPut, IUpdateDb<UserAuthDetails>, IConvertible {
   int? id;
   int? userAuthId;
   String? provider;
@@ -5116,8 +4688,7 @@ class UpdateUserAuthDetails
     company = json['company'];
     email = json['email'];
     phoneNumber = json['phoneNumber'];
-    birthDate =
-        JsonConverters.fromJson(json['birthDate'], 'DateTime', context!);
+    birthDate = JsonConverters.fromJson(json['birthDate'], 'DateTime', context!);
     birthDateRaw = json['birthDateRaw'];
     address = json['address'];
     address2 = json['address2'];
@@ -5132,17 +4703,14 @@ class UpdateUserAuthDetails
     postalCode = json['postalCode'];
     timeZone = json['timeZone'];
     refreshToken = json['refreshToken'];
-    refreshTokenExpiry = JsonConverters.fromJson(
-        json['refreshTokenExpiry'], 'DateTime', context!);
+    refreshTokenExpiry = JsonConverters.fromJson(json['refreshTokenExpiry'], 'DateTime', context!);
     requestToken = json['requestToken'];
     requestTokenSecret = json['requestTokenSecret'];
     items = json['items'];
     accessToken = json['accessToken'];
     accessTokenSecret = json['accessTokenSecret'];
-    createdDate =
-        JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
-    modifiedDate =
-        JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
+    createdDate = JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
+    modifiedDate = JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
     refId = json['refId'];
     refIdStr = json['refIdStr'];
     meta = json['meta'];
@@ -5177,16 +4745,14 @@ class UpdateUserAuthDetails
         'postalCode': postalCode,
         'timeZone': timeZone,
         'refreshToken': refreshToken,
-        'refreshTokenExpiry':
-            JsonConverters.toJson(refreshTokenExpiry, 'DateTime', context!),
+        'refreshTokenExpiry': JsonConverters.toJson(refreshTokenExpiry, 'DateTime', context!),
         'requestToken': requestToken,
         'requestTokenSecret': requestTokenSecret,
         'items': items,
         'accessToken': accessToken,
         'accessTokenSecret': accessTokenSecret,
         'createdDate': JsonConverters.toJson(createdDate, 'DateTime', context!),
-        'modifiedDate':
-            JsonConverters.toJson(modifiedDate, 'DateTime', context!),
+        'modifiedDate': JsonConverters.toJson(modifiedDate, 'DateTime', context!),
         'refId': refId,
         'refIdStr': refIdStr,
         'meta': meta
@@ -5200,12 +4766,7 @@ class UpdateUserAuthDetails
 
 // @Route("/userauthroles/{Id}", "PUT")
 
-class UpdateUserAuthRole
-    implements
-        IReturn<IdResponse>,
-        IPut,
-        IUpdateDb<UserAuthRole>,
-        IConvertible {
+class UpdateUserAuthRole implements IReturn<IdResponse>, IPut, IUpdateDb<UserAuthRole>, IConvertible {
   int? id;
   int? userAuthId;
   String? role;
@@ -5235,10 +4796,8 @@ class UpdateUserAuthRole
     userAuthId = json['userAuthId'];
     role = json['role'];
     permission = json['permission'];
-    createdDate =
-        JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
-    modifiedDate =
-        JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
+    createdDate = JsonConverters.fromJson(json['createdDate'], 'DateTime', context!);
+    modifiedDate = JsonConverters.fromJson(json['modifiedDate'], 'DateTime', context!);
     refId = json['refId'];
     refIdStr = json['refIdStr'];
     meta = json['meta'];
@@ -5251,8 +4810,7 @@ class UpdateUserAuthRole
         'role': role,
         'permission': permission,
         'createdDate': JsonConverters.toJson(createdDate, 'DateTime', context!),
-        'modifiedDate':
-            JsonConverters.toJson(modifiedDate, 'DateTime', context!),
+        'modifiedDate': JsonConverters.toJson(modifiedDate, 'DateTime', context!),
         'refId': refId,
         'refIdStr': refIdStr,
         'meta': meta
@@ -5268,162 +4826,103 @@ TypeContext _ctx = TypeContext(library: 'localhost', types: <String, TypeInfo>{
   'Appointments': TypeInfo(TypeOf.Class, create: () => Appointments()),
   'AppUser': TypeInfo(TypeOf.Class, create: () => AppUser()),
   'CrudEvent': TypeInfo(TypeOf.Class, create: () => CrudEvent()),
-  'MeasurementDetails':
-      TypeInfo(TypeOf.Class, create: () => MeasurementDetails()),
+  'MeasurementDetails': TypeInfo(TypeOf.Class, create: () => MeasurementDetails()),
   'Measurements': TypeInfo(TypeOf.Class, create: () => Measurements()),
   'MeasurementTypes': TypeInfo(TypeOf.Class, create: () => MeasurementTypes()),
   'Schedules': TypeInfo(TypeOf.Class, create: () => Schedules()),
-  'TreatmentReminderSounds':
-      TypeInfo(TypeOf.Class, create: () => TreatmentReminderSounds()),
+  'TreatmentReminderSounds': TypeInfo(TypeOf.Class, create: () => TreatmentReminderSounds()),
   'Treatments': TypeInfo(TypeOf.Class, create: () => Treatments()),
-  'TreatmentScheduledEvents':
-      TypeInfo(TypeOf.Class, create: () => TreatmentScheduledEvents()),
+  'TreatmentScheduledEvents': TypeInfo(TypeOf.Class, create: () => TreatmentScheduledEvents()),
   'UserAuthDetails': TypeInfo(TypeOf.Class, create: () => UserAuthDetails()),
   'UserAuthRole': TypeInfo(TypeOf.Class, create: () => UserAuthRole()),
   'ServerStats': TypeInfo(TypeOf.Class, create: () => ServerStats()),
   'Map<String,int?>': TypeInfo(TypeOf.Class, create: () => Map<String, int?>()),
-  'AdminDashboardResponse':
-      TypeInfo(TypeOf.Class, create: () => AdminDashboardResponse()),
+  'AdminDashboardResponse': TypeInfo(TypeOf.Class, create: () => AdminDashboardResponse()),
   'AdminDashboard': TypeInfo(TypeOf.Class, create: () => AdminDashboard()),
-  'QueryResponse<Appointments>':
-      TypeInfo(TypeOf.Class, create: () => QueryResponse<Appointments>()),
-  'QueryAppointments':
-      TypeInfo(TypeOf.Class, create: () => QueryAppointments()),
+  'QueryResponse<Appointments>': TypeInfo(TypeOf.Class, create: () => QueryResponse<Appointments>()),
+  'QueryAppointments': TypeInfo(TypeOf.Class, create: () => QueryAppointments()),
   'List<Appointments>': TypeInfo(TypeOf.Class, create: () => <Appointments>[]),
-  'QueryResponse<AppUser>':
-      TypeInfo(TypeOf.Class, create: () => QueryResponse<AppUser>()),
+  'QueryResponse<AppUser>': TypeInfo(TypeOf.Class, create: () => QueryResponse<AppUser>()),
   'QueryAppUsers': TypeInfo(TypeOf.Class, create: () => QueryAppUsers()),
   'List<AppUser>': TypeInfo(TypeOf.Class, create: () => <AppUser>[]),
-  'QueryResponse<CrudEvent>':
-      TypeInfo(TypeOf.Class, create: () => QueryResponse<CrudEvent>()),
+  'QueryResponse<CrudEvent>': TypeInfo(TypeOf.Class, create: () => QueryResponse<CrudEvent>()),
   'QueryCrudEvents': TypeInfo(TypeOf.Class, create: () => QueryCrudEvents()),
   'List<CrudEvent>': TypeInfo(TypeOf.Class, create: () => <CrudEvent>[]),
-  'QueryResponse<MeasurementDetails>':
-      TypeInfo(TypeOf.Class, create: () => QueryResponse<MeasurementDetails>()),
-  'QueryMeasurementDetails':
-      TypeInfo(TypeOf.Class, create: () => QueryMeasurementDetails()),
-  'List<MeasurementDetails>':
-      TypeInfo(TypeOf.Class, create: () => <MeasurementDetails>[]),
-  'QueryResponse<Measurements>':
-      TypeInfo(TypeOf.Class, create: () => QueryResponse<Measurements>()),
-  'QueryMeasurements':
-      TypeInfo(TypeOf.Class, create: () => QueryMeasurements()),
+  'QueryResponse<MeasurementDetails>': TypeInfo(TypeOf.Class, create: () => QueryResponse<MeasurementDetails>()),
+  'QueryMeasurementDetails': TypeInfo(TypeOf.Class, create: () => QueryMeasurementDetails()),
+  'List<MeasurementDetails>': TypeInfo(TypeOf.Class, create: () => <MeasurementDetails>[]),
+  'QueryResponse<Measurements>': TypeInfo(TypeOf.Class, create: () => QueryResponse<Measurements>()),
+  'QueryMeasurements': TypeInfo(TypeOf.Class, create: () => QueryMeasurements()),
   'List<Measurements>': TypeInfo(TypeOf.Class, create: () => <Measurements>[]),
-  'QueryResponse<MeasurementTypes>':
-      TypeInfo(TypeOf.Class, create: () => QueryResponse<MeasurementTypes>()),
-  'QueryMeasurementTypes':
-      TypeInfo(TypeOf.Class, create: () => QueryMeasurementTypes()),
-  'List<MeasurementTypes>':
-      TypeInfo(TypeOf.Class, create: () => <MeasurementTypes>[]),
-  'QueryResponse<Schedules>':
-      TypeInfo(TypeOf.Class, create: () => QueryResponse<Schedules>()),
+  'QueryResponse<MeasurementTypes>': TypeInfo(TypeOf.Class, create: () => QueryResponse<MeasurementTypes>()),
+  'QueryMeasurementTypes': TypeInfo(TypeOf.Class, create: () => QueryMeasurementTypes()),
+  'List<MeasurementTypes>': TypeInfo(TypeOf.Class, create: () => <MeasurementTypes>[]),
+  'QueryResponse<Schedules>': TypeInfo(TypeOf.Class, create: () => QueryResponse<Schedules>()),
   'QuerySchedules': TypeInfo(TypeOf.Class, create: () => QuerySchedules()),
   'List<Schedules>': TypeInfo(TypeOf.Class, create: () => <Schedules>[]),
-  'QueryResponse<TreatmentReminderSounds>': TypeInfo(TypeOf.Class,
-      create: () => QueryResponse<TreatmentReminderSounds>()),
-  'QueryTreatmentReminderSounds':
-      TypeInfo(TypeOf.Class, create: () => QueryTreatmentReminderSounds()),
-  'List<TreatmentReminderSounds>':
-      TypeInfo(TypeOf.Class, create: () => <TreatmentReminderSounds>[]),
-  'QueryResponse<Treatments>':
-      TypeInfo(TypeOf.Class, create: () => QueryResponse<Treatments>()),
+  'QueryResponse<TreatmentReminderSounds>':
+      TypeInfo(TypeOf.Class, create: () => QueryResponse<TreatmentReminderSounds>()),
+  'QueryTreatmentReminderSounds': TypeInfo(TypeOf.Class, create: () => QueryTreatmentReminderSounds()),
+  'List<TreatmentReminderSounds>': TypeInfo(TypeOf.Class, create: () => <TreatmentReminderSounds>[]),
+  'QueryResponse<Treatments>': TypeInfo(TypeOf.Class, create: () => QueryResponse<Treatments>()),
   'QueryTreatments': TypeInfo(TypeOf.Class, create: () => QueryTreatments()),
   'List<Treatments>': TypeInfo(TypeOf.Class, create: () => <Treatments>[]),
-  'QueryResponse<TreatmentScheduledEvents>': TypeInfo(TypeOf.Class,
-      create: () => QueryResponse<TreatmentScheduledEvents>()),
-  'QueryTreatmentScheduledEvents':
-      TypeInfo(TypeOf.Class, create: () => QueryTreatmentScheduledEvents()),
-  'List<TreatmentScheduledEvents>':
-      TypeInfo(TypeOf.Class, create: () => <TreatmentScheduledEvents>[]),
-  'QueryResponse<UserAuthDetails>':
-      TypeInfo(TypeOf.Class, create: () => QueryResponse<UserAuthDetails>()),
-  'QueryUserAuthDetails':
-      TypeInfo(TypeOf.Class, create: () => QueryUserAuthDetails()),
-  'List<UserAuthDetails>':
-      TypeInfo(TypeOf.Class, create: () => <UserAuthDetails>[]),
-  'QueryResponse<UserAuthRole>':
-      TypeInfo(TypeOf.Class, create: () => QueryResponse<UserAuthRole>()),
-  'QueryUserAuthRoles':
-      TypeInfo(TypeOf.Class, create: () => QueryUserAuthRoles()),
+  'QueryResponse<TreatmentScheduledEvents>':
+      TypeInfo(TypeOf.Class, create: () => QueryResponse<TreatmentScheduledEvents>()),
+  'QueryTreatmentScheduledEvents': TypeInfo(TypeOf.Class, create: () => QueryTreatmentScheduledEvents()),
+  'List<TreatmentScheduledEvents>': TypeInfo(TypeOf.Class, create: () => <TreatmentScheduledEvents>[]),
+  'QueryResponse<UserAuthDetails>': TypeInfo(TypeOf.Class, create: () => QueryResponse<UserAuthDetails>()),
+  'QueryUserAuthDetails': TypeInfo(TypeOf.Class, create: () => QueryUserAuthDetails()),
+  'List<UserAuthDetails>': TypeInfo(TypeOf.Class, create: () => <UserAuthDetails>[]),
+  'QueryResponse<UserAuthRole>': TypeInfo(TypeOf.Class, create: () => QueryResponse<UserAuthRole>()),
+  'QueryUserAuthRoles': TypeInfo(TypeOf.Class, create: () => QueryUserAuthRoles()),
   'List<UserAuthRole>': TypeInfo(TypeOf.Class, create: () => <UserAuthRole>[]),
-  'CreateAppointments':
-      TypeInfo(TypeOf.Class, create: () => CreateAppointments()),
+  'CreateAppointments': TypeInfo(TypeOf.Class, create: () => CreateAppointments()),
   'CreateAppUser': TypeInfo(TypeOf.Class, create: () => CreateAppUser()),
   'CreateCrudEvent': TypeInfo(TypeOf.Class, create: () => CreateCrudEvent()),
-  'CreateMeasurementDetails':
-      TypeInfo(TypeOf.Class, create: () => CreateMeasurementDetails()),
-  'CreateMeasurements':
-      TypeInfo(TypeOf.Class, create: () => CreateMeasurements()),
-  'CreateMeasurementTypes':
-      TypeInfo(TypeOf.Class, create: () => CreateMeasurementTypes()),
+  'CreateMeasurementDetails': TypeInfo(TypeOf.Class, create: () => CreateMeasurementDetails()),
+  'CreateMeasurements': TypeInfo(TypeOf.Class, create: () => CreateMeasurements()),
+  'CreateMeasurementTypes': TypeInfo(TypeOf.Class, create: () => CreateMeasurementTypes()),
   'CreateSchedules': TypeInfo(TypeOf.Class, create: () => CreateSchedules()),
-  'CreateTreatmentReminderSounds':
-      TypeInfo(TypeOf.Class, create: () => CreateTreatmentReminderSounds()),
+  'CreateTreatmentReminderSounds': TypeInfo(TypeOf.Class, create: () => CreateTreatmentReminderSounds()),
   'CreateTreatments': TypeInfo(TypeOf.Class, create: () => CreateTreatments()),
-  'CreateTreatmentScheduledEvents':
-      TypeInfo(TypeOf.Class, create: () => CreateTreatmentScheduledEvents()),
-  'CreateUserAuthDetails':
-      TypeInfo(TypeOf.Class, create: () => CreateUserAuthDetails()),
-  'CreateUserAuthRole':
-      TypeInfo(TypeOf.Class, create: () => CreateUserAuthRole()),
-  'DeleteAppointments':
-      TypeInfo(TypeOf.Class, create: () => DeleteAppointments()),
+  'CreateTreatmentScheduledEvents': TypeInfo(TypeOf.Class, create: () => CreateTreatmentScheduledEvents()),
+  'CreateUserAuthDetails': TypeInfo(TypeOf.Class, create: () => CreateUserAuthDetails()),
+  'CreateUserAuthRole': TypeInfo(TypeOf.Class, create: () => CreateUserAuthRole()),
+  'DeleteAppointments': TypeInfo(TypeOf.Class, create: () => DeleteAppointments()),
   'DeleteAppUser': TypeInfo(TypeOf.Class, create: () => DeleteAppUser()),
   'DeleteCrudEvent': TypeInfo(TypeOf.Class, create: () => DeleteCrudEvent()),
-  'DeleteMeasurementDetails':
-      TypeInfo(TypeOf.Class, create: () => DeleteMeasurementDetails()),
-  'DeleteMeasurements':
-      TypeInfo(TypeOf.Class, create: () => DeleteMeasurements()),
-  'DeleteMeasurementTypes':
-      TypeInfo(TypeOf.Class, create: () => DeleteMeasurementTypes()),
+  'DeleteMeasurementDetails': TypeInfo(TypeOf.Class, create: () => DeleteMeasurementDetails()),
+  'DeleteMeasurements': TypeInfo(TypeOf.Class, create: () => DeleteMeasurements()),
+  'DeleteMeasurementTypes': TypeInfo(TypeOf.Class, create: () => DeleteMeasurementTypes()),
   'DeleteSchedules': TypeInfo(TypeOf.Class, create: () => DeleteSchedules()),
-  'DeleteTreatmentReminderSounds':
-      TypeInfo(TypeOf.Class, create: () => DeleteTreatmentReminderSounds()),
+  'DeleteTreatmentReminderSounds': TypeInfo(TypeOf.Class, create: () => DeleteTreatmentReminderSounds()),
   'DeleteTreatments': TypeInfo(TypeOf.Class, create: () => DeleteTreatments()),
-  'DeleteTreatmentScheduledEvents':
-      TypeInfo(TypeOf.Class, create: () => DeleteTreatmentScheduledEvents()),
-  'DeleteUserAuthDetails':
-      TypeInfo(TypeOf.Class, create: () => DeleteUserAuthDetails()),
-  'DeleteUserAuthRole':
-      TypeInfo(TypeOf.Class, create: () => DeleteUserAuthRole()),
-  'PatchAppointments':
-      TypeInfo(TypeOf.Class, create: () => PatchAppointments()),
+  'DeleteTreatmentScheduledEvents': TypeInfo(TypeOf.Class, create: () => DeleteTreatmentScheduledEvents()),
+  'DeleteUserAuthDetails': TypeInfo(TypeOf.Class, create: () => DeleteUserAuthDetails()),
+  'DeleteUserAuthRole': TypeInfo(TypeOf.Class, create: () => DeleteUserAuthRole()),
+  'PatchAppointments': TypeInfo(TypeOf.Class, create: () => PatchAppointments()),
   'PatchAppUser': TypeInfo(TypeOf.Class, create: () => PatchAppUser()),
   'PatchCrudEvent': TypeInfo(TypeOf.Class, create: () => PatchCrudEvent()),
-  'PatchMeasurementDetails':
-      TypeInfo(TypeOf.Class, create: () => PatchMeasurementDetails()),
-  'PatchMeasurements':
-      TypeInfo(TypeOf.Class, create: () => PatchMeasurements()),
-  'PatchMeasurementTypes':
-      TypeInfo(TypeOf.Class, create: () => PatchMeasurementTypes()),
+  'PatchMeasurementDetails': TypeInfo(TypeOf.Class, create: () => PatchMeasurementDetails()),
+  'PatchMeasurements': TypeInfo(TypeOf.Class, create: () => PatchMeasurements()),
+  'PatchMeasurementTypes': TypeInfo(TypeOf.Class, create: () => PatchMeasurementTypes()),
   'PatchSchedules': TypeInfo(TypeOf.Class, create: () => PatchSchedules()),
-  'PatchTreatmentReminderSounds':
-      TypeInfo(TypeOf.Class, create: () => PatchTreatmentReminderSounds()),
+  'PatchTreatmentReminderSounds': TypeInfo(TypeOf.Class, create: () => PatchTreatmentReminderSounds()),
   'PatchTreatments': TypeInfo(TypeOf.Class, create: () => PatchTreatments()),
-  'PatchTreatmentScheduledEvents':
-      TypeInfo(TypeOf.Class, create: () => PatchTreatmentScheduledEvents()),
-  'PatchUserAuthDetails':
-      TypeInfo(TypeOf.Class, create: () => PatchUserAuthDetails()),
-  'PatchUserAuthRole':
-      TypeInfo(TypeOf.Class, create: () => PatchUserAuthRole()),
-  'UpdateAppointments':
-      TypeInfo(TypeOf.Class, create: () => UpdateAppointments()),
+  'PatchTreatmentScheduledEvents': TypeInfo(TypeOf.Class, create: () => PatchTreatmentScheduledEvents()),
+  'PatchUserAuthDetails': TypeInfo(TypeOf.Class, create: () => PatchUserAuthDetails()),
+  'PatchUserAuthRole': TypeInfo(TypeOf.Class, create: () => PatchUserAuthRole()),
+  'UpdateAppointments': TypeInfo(TypeOf.Class, create: () => UpdateAppointments()),
   'UpdateAppUser': TypeInfo(TypeOf.Class, create: () => UpdateAppUser()),
   'UpdateCrudEvent': TypeInfo(TypeOf.Class, create: () => UpdateCrudEvent()),
-  'UpdateMeasurementDetails':
-      TypeInfo(TypeOf.Class, create: () => UpdateMeasurementDetails()),
-  'UpdateMeasurements':
-      TypeInfo(TypeOf.Class, create: () => UpdateMeasurements()),
-  'UpdateMeasurementTypes':
-      TypeInfo(TypeOf.Class, create: () => UpdateMeasurementTypes()),
+  'UpdateMeasurementDetails': TypeInfo(TypeOf.Class, create: () => UpdateMeasurementDetails()),
+  'UpdateMeasurements': TypeInfo(TypeOf.Class, create: () => UpdateMeasurements()),
+  'UpdateMeasurementTypes': TypeInfo(TypeOf.Class, create: () => UpdateMeasurementTypes()),
   'UpdateSchedules': TypeInfo(TypeOf.Class, create: () => UpdateSchedules()),
-  'UpdateTreatmentReminderSounds':
-      TypeInfo(TypeOf.Class, create: () => UpdateTreatmentReminderSounds()),
+  'UpdateTreatmentReminderSounds': TypeInfo(TypeOf.Class, create: () => UpdateTreatmentReminderSounds()),
   'UpdateTreatments': TypeInfo(TypeOf.Class, create: () => UpdateTreatments()),
-  'UpdateTreatmentScheduledEvents':
-      TypeInfo(TypeOf.Class, create: () => UpdateTreatmentScheduledEvents()),
-  'UpdateUserAuthDetails':
-      TypeInfo(TypeOf.Class, create: () => UpdateUserAuthDetails()),
-  'UpdateUserAuthRole':
-      TypeInfo(TypeOf.Class, create: () => UpdateUserAuthRole()),
+  'UpdateTreatmentScheduledEvents': TypeInfo(TypeOf.Class, create: () => UpdateTreatmentScheduledEvents()),
+  'UpdateUserAuthDetails': TypeInfo(TypeOf.Class, create: () => UpdateUserAuthDetails()),
+  'UpdateUserAuthRole': TypeInfo(TypeOf.Class, create: () => UpdateUserAuthRole()),
 });

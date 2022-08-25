@@ -1,9 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tmh/src/features/authentication/data/fake_auth_repository.dart';
+import 'package:tmh/src/features/authentication/domain/app_user.dart';
 import 'package:tmh/src/features/authentication/presentation/sign_in/email_password_sign_in_state.dart';
 
-class EmailPasswordSignInController
-    extends StateNotifier<EmailPasswordSignInState> {
+class EmailPasswordSignInController extends StateNotifier<EmailPasswordSignInState> {
   EmailPasswordSignInController({
     required EmailPasswordSignInFormType formType,
     required this.authRepository,
@@ -17,7 +17,7 @@ class EmailPasswordSignInController
     return value.hasError == false;
   }
 
-  Future<void> _authenticate(String email, String password) {
+  Future<AppUser?> _authenticate(String email, String password) {
     switch (state.formType) {
       case EmailPasswordSignInFormType.signIn:
         return authRepository.signInWithEmailAndPassword(email, password);
@@ -26,14 +26,20 @@ class EmailPasswordSignInController
     }
   }
 
+  Future<bool> checkAuth() async {
+    state = state.copyWith(value: const AsyncValue.loading());
+    final value = await AsyncValue.guard(() => authRepository.checkAuth());
+    state = state.copyWith(value: value);
+    return value.hasError == false;
+  }
+
   void updateFormType(EmailPasswordSignInFormType formType) {
     state = state.copyWith(formType: formType);
   }
 }
 
 final emailPasswordSignInControllerProvider = StateNotifierProvider.autoDispose
-    .family<EmailPasswordSignInController, EmailPasswordSignInState,
-        EmailPasswordSignInFormType>((ref, formType) {
+    .family<EmailPasswordSignInController, EmailPasswordSignInState, EmailPasswordSignInFormType>((ref, formType) {
   final authRepository = ref.watch(authRepositoryProvider);
   return EmailPasswordSignInController(
     authRepository: authRepository,
