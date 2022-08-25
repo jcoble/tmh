@@ -1,18 +1,19 @@
 import 'dart:math';
 
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
+
 import 'package:tmh/src/common_widgets/alert_dialogs.dart';
 import 'package:tmh/src/common_widgets/async_value_widget.dart';
-import 'package:tmh/src/features/products/data/fake_products_repository.dart';
-import 'package:tmh/src/localization/string_hardcoded.dart';
-import 'package:flutter/material.dart';
 import 'package:tmh/src/common_widgets/custom_image.dart';
 import 'package:tmh/src/common_widgets/item_quantity_selector.dart';
 import 'package:tmh/src/common_widgets/responsive_two_column_layout.dart';
 import 'package:tmh/src/constants/app_sizes.dart';
 import 'package:tmh/src/features/cart/domain/item.dart';
+import 'package:tmh/src/features/products/data/fake_products_repository.dart';
 import 'package:tmh/src/features/products/domain/product.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:intl/intl.dart';
+import 'package:tmh/src/localization/string_hardcoded.dart';
 
 /// Shows a shopping cart item (or loading/error UI if needed)
 class ShoppingCartItem extends ConsumerWidget {
